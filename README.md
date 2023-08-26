@@ -1,5 +1,4 @@
-# PROGRAMS
-All programs that I code during learning. 
+# PROGRAMS 
 <br>
 Author: MD Rashedul Hasan<br>
 ISTT<br>
