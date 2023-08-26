@@ -21,13 +21,14 @@
   "code-runner.saveFileBeforeRun": true,
   "code-runner.showExecutionMessage": false,
   "code-runner.ignoreSelection": true,
+  "code-runner.terminalRoot": "/", //include this if you are using bash else comment it out
   "code-runner.executorMap": {
     "javascript": "node",
     // "java": "clear; cd $dir && javac $fileName && java $fileNameWithoutExt",
     "java": "cd $dir && java $fileName",
     "c": "cd $dir && gcc $fileName -o zzExecutable && .\\zzExecutable.exe",
     "zig": "zig run",
-    "cpp": "cd $dir && g++ -DRASHEDUL $fileName -std=c++2b -o  zzExecutable && .\\zzExecutable.exe",
+    "cpp": "clear; cd $dir && g++ -DRASHEDUL $fileName -std=c++2b -o  zzExecutable && .\\zzExecutable.exe",
     "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "php": "php",
     "python": "python -u",
@@ -147,6 +148,7 @@
   "cSpell.userWords": [
     "aeiou",
     "Babuni",
+    "DRASHEDUL",
     "Hasan",
     "ISTT",
     "kadane",
@@ -155,7 +157,7 @@
   ],
   "liveServer.settings.donotVerifyTags": true,
   "redhat.telemetry.enabled": false,
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
       "source": "PowerShell",
@@ -176,7 +178,7 @@
       "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
     }
   },
-  "codegpt.apiKey": "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",
+  //"codegpt.apiKey": "it was an api",
   "C_Cpp.default.compilerPath": "C:\\mingw64\\bin\\g++.exe",
   "path-intellisense.autoTriggerNextSuggestion": true,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
@@ -188,7 +190,5 @@
   "workbench.colorTheme": "JellyFish",
   "breadcrumbs.enabled": false,
   "chatgpt.temperature": 0.5,
-  "terminal.integrated.env.linux": {},
-  "window.zoomLevel": 1,
-  "workbench.statusBar.visible": false
+  "terminal.integrated.env.linux": {}
 }

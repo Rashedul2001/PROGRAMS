@@ -125,5 +125,14 @@
     "key": "ctrl+g",
     "command": "-extension.vim_ctrl+g",
     "when": "editorTextFocus && vim.active && vim.use<C-g> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "-workbench.action.terminal.goToRecentDirectory",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "alt+t",
+    "command": "workbench.action.toggleMaximizedPanel"
   }
 ]
