@@ -1,0 +1,107 @@
+ <<<c>>>
+ 
+ 
+ if (scanf("%d", &choice) == 0)
+        {
+            while (in = getchar() != '\n')
+                ;
+            continue;
+        }
+
+in C, a scanf function returns the number of successful inputs scanned and assigned.
+ It returns zero in case of matching failure occurs and EOF is returned if the input is reached the end 
+ and no data is read successfully.
+
+
+
+ if (!scanf("%d", &choice))
+ {
+    scanf("%*s");
+    continue;
+ }
+
+
+
+ <<<<CPP>>>>
+
+** have to include **
+#include<limits>
+ do
+    {
+        cout << "Enter your choice:";
+        if (cin >> choice)
+            break;
+        else
+        {
+            std::cerr << "Wrong input!\n";
+            std::cin.clear();                                                   // reset state
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // consume wrong input
+        }
+    } while (true);
+
+
+
+Question: When executing a program, the console window blinks and then closes immediately.
+
+First, add or ensure the following lines are near the top of your program (Visual Studio users, make sure these lines appear after #include “pch.h” or #include “stdafx.h”, if those exist):
+
+#include <iostream>
+#include <limits>
+Second, add the following code at the end of your main() function (right before the return statement):
+
+std::cin.clear(); // reset any error flags
+std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // ignore any characters in the input buffer until we find an enter character
+std::cin.get(); // get one more char from the user
+This will cause your program to wait for the user to press a key before continuing, which will give you time to examine your program’s output before your operating system closes the console window.
+
+Other solutions, such as the commonly suggested system(“pause”) solution may only work on certain operating systems and should be avoided.
+
+Older versions of Visual Studio may not pause when the program is run in Start With Debugging (F5) mode. Try running in Start Without Debugging (Ctrl-F5) mode.
+
+
+
+######################################################
+
+Validating user input in C++
+#################################################
+
+   #include<iostream>
+#include<limits>
+using namespace std;
+
+int main()
+{
+int a;
+
+ cout<<“Enter an integer number\n”;
+cin>>a;
+while(1)
+{
+if(cin.fail())
+{
+cin.clear();
+cin.ignore(numeric_limits<streamsize>::max(),’\n’);
+cout<<“You have entered wrong input”<<endl;
+cin>>a;
+}
+if(!cin.fail())
+break;
+}
+
+cout<<“the number is: “<<a<<endl;
+return 0;
+}
+#########################################
+
+void getinput(int &input)
+{
+    std::cin >> input;
+    while (std::cin.fail())
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Please Enter Correctly:";
+        std::cin >> input;
+    }
+}
+############################################################

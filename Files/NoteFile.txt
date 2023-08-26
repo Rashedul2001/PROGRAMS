@@ -1,0 +1,83 @@
+###################################################
+
+Problem with getline()
+
+####################################################
+When you enter a value using operator>>, std::cin not only captures the value, it also captures the newline character ('\n') that occurs when you hit the enter key. So when we type 2 and then hit enter, std::cin captures the string "2\n" as input. It then extracts the value 2 to variable choice, leaving the newline character behind for later. Then, when std::getline() goes to extract text to name, it sees "\n" is already waiting in std::cin, and figures we must have previously entered an empty string! Definitely not what was intended.
+
+We can amend the above program to use the std::ws input manipulator, to tell std::getline() to ignore any leading whitespace characters:
+
+#include <string>
+#include <iostream>
+
+int main()
+{
+    std::cout << "Pick 1 or 2: ";
+    int choice{};
+    std::cin >> choice;
+
+    std::cout << "Now enter your name: ";
+    std::string name{};
+    std::getline(std::cin >> std::ws, name); // note: added std::ws here
+
+    std::cout << "Hello, " << name << ", you picked " << choice << '\n';
+
+    return 0;
+}
+Now this program will function as intended.
+
+Pick 1 or 2: 2
+Now enter your name: Alex
+Hello, Alex, you picked 2
+Best practice
+
+If using std::getline() to read strings, use std::cin >> std::ws input manipulator to ignore leading whitespace.
+
+#################################################
+
+Validating user input in C++
+#################################################
+
+   #include<iostream>
+#include<limits>
+using namespace std;
+
+int main()
+{
+int a;
+
+ cout<<“Enter an integer number\n”;
+cin>>a;
+while(1)
+{
+if(cin.fail())
+{
+cin.clear();
+cin.ignore(numeric_limits<streamsize>::max(),’\n’);
+cout<<“You have entered wrong input”<<endl;
+cin>>a;
+}
+if(!cin.fail())
+break;
+}
+
+cout<<“the number is: “<<a<<endl;
+return 0;
+}
+
+or implement a function
+if(cin.fail())
+clear()
+{
+    ignore....... statemenst
+}
+####################################################################
+Returning or passing ostream by value
+####################################################################
+The trickiest part here is the return type. With the arithmetic operators,
+ we calculated and returned a single answer by value (because we were creating and returning a new result).
+However, if you try to return std::ostream by value, 
+you’ll get a compiler error. This happens because std::ostream specifically disallows being copied.
+
+####################################################################
+

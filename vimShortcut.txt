@@ -1,0 +1,5 @@
+1. go to the specific character==> for next character type "f<character>" without the <> brackets and for previous
+   character type "F<char>"
+2.  go to the beggining of the file==> type gg
+3. go to the end of the file==> type G
+4. go to the end of line ==> A

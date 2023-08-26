@@ -1,0 +1,18 @@
+1. Use auto when the returning value may change occasionally
+2. When returning by reference or returning by pointer, we must ensure that returning value exist until pogram ends
+    or else that will cause undefined behavior.. 
+3.@ to go to the spcific class or function
+4. "This" is a pointer of a object in which it used. Use it as a pointer. Like for the object type " *this" and for pointer type " *this"
+5.when passig the referenc we pass the value and as argument we write(type & value)
+  we can use the name as value and pointer the parent value. 
+  that's mean we can use the recieved value as a reference, like a regular value
+  and also by changing value we use it as a pointer to parent value (parent value will also change)
+
+6. Now when we return a value as a reference like ex.. type& function(){return value;}
+    we can use the returned value as a reference or as a regular value
+    we can store that in a reference type variable like ==> type &name= value;
+    name is now a reference to value;
+    also we can assing it to other variable ==> type name= value;
+    name now contain the value of value;
+    but cannot change the parent value;
+7.use '\n' rather than endl it proven better.    

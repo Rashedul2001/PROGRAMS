@@ -1,0 +1,34 @@
+r.No.	Mode & Description
+1	
+r
+
+Opens an existing text file for reading purpose.
+
+2	
+w
+
+Opens a text file for writing. If it does not exist, then a new file is created. Here your program will start writing content from the beginning of the file.
+
+3	
+a
+
+Opens a text file for writing in appending mode. If it does not exist, then a new file is created. Here your program will start appending content in the existing file content.
+
+4	
+r+
+
+Opens a text file for both reading and writing.
+
+5	
+w+
+
+Opens a text file for both reading and writing. It first truncates the file to zero length if it exists, otherwise creates a file if it does not exist.
+
+6	
+a+
+
+Opens a text file for both reading and writing. It creates the file if it does not exist. The reading will start from the beginning but writing can only be appended.
+
+If you are going to handle binary files, then you will use following access modes instead of the above mentioned ones −
+
+"rb", "wb", "ab", "rb+", "r+b", "wb+", "w+b", "ab+", "a+b"
