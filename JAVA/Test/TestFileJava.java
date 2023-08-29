@@ -1,27 +1,19 @@
-import javax.swing.*;
-import java.awt.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
-public class TestFileJava extends JTextField {
-    private String hint;
-
-    public TestFileJava(String hint) {
-        this.hint = hint;
+public class Main {
+  public static void main(String[] args) {
+    File folder = new File("/path/to/folder");
+    File[] files = folder.listFiles();
+    try {
+      FileWriter writer = new FileWriter("/path/to/text/file.txt");
+      for (File file : files) {
+        writer.write(file.getName() + "\n");
+      }
+      writer.close();
+    } catch (IOException e) {
+      e.printStackTrace();
     }
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-
-        // Display the hint text when the field is empty
-        if (getText().isEmpty()) {
-            Graphics2D g2 = (Graphics2D) g.create();
-            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2.setColor(Color.GRAY);
-            g2.setFont(getFont().deriveFont(Font.ITALIC));
-            g2.drawString(hint, getInsets().left, g2.getFontMetrics().getAscent() + getInsets().top);
-            g2.dispose();
-        }
-    }
+  }
 }
-
-
