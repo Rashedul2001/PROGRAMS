@@ -31,5 +31,10 @@ int main()
     cout.tie(nullptr);
     // START:)
 
+    int t;
+    cin >> t;
+    while (t--)
+    {
+    }
     return 0;
 }
