@@ -27,6 +27,9 @@ const int N = 1e6;
 
 int main()
 {
+#ifdef RASHEDUL
+    freopen("input.txt", "r", stdin);
+#endif
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
