@@ -25,10 +25,15 @@ typedef unsigned int uint;
 const int mod = 1e9 + 7;
 const int N = 1e6;
 
+void Solve()
+{
+}
+
 int main()
 {
 #ifdef RASHEDUL
-    freopen("input.txt", "r", stdin);
+    freopen("a.in", "r", stdin);
+    freopen("a.out", "w", stdout);
 #endif
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -39,6 +44,7 @@ int main()
     cin >> T;
     while (T--)
     {
+        Solve();
     }
     return 0;
 }

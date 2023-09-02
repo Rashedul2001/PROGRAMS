@@ -105,5 +105,6 @@
   "C_Cpp.default.cStandard": "c17",
   "cmake.configureOnOpen": false,
   "python.analysis.typeCheckingMode": "basic",
-  "cmake.sourceDirectory": "/media/rashedul2001/SR_Drive/PersonalFiles/PROGRAMS/C++/SR Folder/ButtonCPP/Button"
+  "cmake.sourceDirectory": "/media/rashedul2001/SR_Drive/PersonalFiles/PROGRAMS/C++/SR Folder/ButtonCPP/Button",
+  "C_Cpp.errorSquiggles": "enabled"
 }
