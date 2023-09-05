@@ -32,15 +32,28 @@ void print(T value)
     std::cout << "=====================" << '\n';
     ;
 }
-
-template <typename T>
-void display(T &value)
+template <typename T, size_t N>
+void printArray(T (&arr)[N])
 {
-    cout << "Start: ";
-    for (int i = 0; i < value.size(); i++)
+    std::cout << "Start" << std::endl;
+    for (size_t i = 0; i < N; i++)
     {
-        std::cout << value[i] << " ";
+        std::cout << arr[i] << " ";
     }
-    std::cout << '\n';
-    ;
+    std::cout << "End" << std::endl;
+}
+
+template <typename t, size_t row, size_t col>
+void print2DArray(t (&arr)[row][col])
+{
+    std::cout << "Start" << std::endl;
+    for (size_t i = 0; i < row; i++)
+    {
+        for (size_t j = 0; j < col; j++)
+        {
+            std::cout << arr[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << "End" << std::endl;
 }

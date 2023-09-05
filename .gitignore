@@ -4,9 +4,11 @@ CONTEST_CodeForces_Folder/CodeCPP.cpp
 CONTEST_CodeForces_Folder/zzExecutable.exe
 
 C++/3rdSemesterLabReportPrograms/zzExecutable.exe
-C++/Guaranteed Placement Course/testFileCPP.cpp
-C++/Guaranteed Placement Course/TestFileCPP2.cpp
 C++/test/File/zzExecutable.exe
-C++/Guaranteed Placement Course/permutations.txt
 CONTEST_CodeForces_Folder/a.in
 CONTEST_CodeForces_Folder/a.out
+CONTEST_CodeForces_Folder/testFileCPP.cpp
+CONTEST_CodeForces_Folder/TestFileCPP2.cpp
+PYTHON/Test Cases/TestFilePY.py
+C++/test/TestFileCPP2.cpp
+C++/test/testFileCPP.cpp
