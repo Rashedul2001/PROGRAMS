@@ -18,8 +18,18 @@ int main()
         std::cout << inputStreamString;
     }
     std::cout << std::endl;
-    inputFile.close();
-    inputFile.open("inputFile.txt");
+    // inputFile.close();
+    // inputFile.open("inputFile.txt");
+
+    // while (inputFile)
+    // {
+    //     std::string inputStreamString;
+    //     std::getline(inputFile, inputStreamString);
+    //     std::cout << inputStreamString << std::endl;
+    // }
+
+    inputFile.clear();
+    inputFile.seekg(0, std::ios::beg);
 
     while (inputFile)
     {
@@ -27,6 +37,7 @@ int main()
         std::getline(inputFile, inputStreamString);
         std::cout << inputStreamString << std::endl;
     }
+    inputFile.close();
 
     return 0;
 }
