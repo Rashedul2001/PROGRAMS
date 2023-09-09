@@ -1,0 +1,19 @@
+There are many sorting algorithms with different time and space complexities. Here are some of the common ones:
+
+Bubble Sort: Time complexity is O(n^2) in the worst and average case, and O(n) in the best case (when the array is already sorted). Space complexity is O(1), as it only uses a constant amount of extra space12.
+
+Selection Sort: Time complexity is O(n^2) in all cases, as it always scans the whole array to find the minimum element. Space complexity is O(1), as it only swaps elements in place12.
+
+Insertion Sort: Time complexity is O(n^2) in the worst and average case, and O(n) in the best case (when the array is already sorted or nearly sorted). Space complexity is O(1), as it only shifts elements in place12.
+
+Merge Sort: Time complexity is O(n log n) in all cases, as it always divides the array into two halves and merges them in linear time. Space complexity is O(n), as it requires an auxiliary array of the same size as the input12.
+
+Quick Sort: Time complexity is O(n log n) in the average case, and O(n^2) in the worst case (when the array is already sorted or nearly sorted). Space complexity is O(log n) on average, and O(n) in the worst case, due to the recursive call stack12.
+
+Heap Sort: Time complexity is O(n log n) in all cases, as it builds a binary heap from the array and extracts the maximum element n times. Space complexity is O(1), as it only swaps elements in place12.
+
+Counting Sort: Time complexity is O(n + k), where k is the range of the input elements. Space complexity is O(k), as it requires an auxiliary array of size k to store the counts of each element12.
+
+Radix Sort: Time complexity is O(d * (n + b)), where d is the number of digits in the largest element, n is the size of the input array, and b is the base or radix used. Space complexity is O(n + b), as it requires an auxiliary array of size n and a bucket array of size b12.
+
+Bucket Sort: Time complexity is O(n + k) on average, where k is the number of buckets used. Space complexity is O(n + k), as it requires an auxiliary array of size n and a bucket array of size k
