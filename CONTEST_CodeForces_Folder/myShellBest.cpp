@@ -32,8 +32,8 @@ void Solve()
 int main()
 {
 #ifdef RASHEDUL
-    freopen("a.in", "r", stdin);
-    freopen("a.out", "w", stdout);
+    freopen("in.in", "r", stdin);
+    freopen("out.out", "w", stdout);
 #endif
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
