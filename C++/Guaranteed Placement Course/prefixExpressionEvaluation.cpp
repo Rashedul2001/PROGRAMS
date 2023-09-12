@@ -15,9 +15,9 @@ int prefixEvaluation(const std::string &prefixExpression)
         }
         else
         {
-            int operand1 = st.top();
+            int operand1 = st.top(); // this will be changed in postfix evaluation
             st.pop();
-            int operand2 = st.top();
+            int operand2 = st.top(); // have to be careful about what will be the first and second operand
             st.pop();
 
             switch (prefixExpression[i])
@@ -50,8 +50,7 @@ int prefixEvaluation(const std::string &prefixExpression)
 
 int main()
 {
-    std::cout<<prefixEvaluation("-+7*45+20");
-
+    std::cout << prefixEvaluation("-+7*45+20");
 
     return 0;
 }
