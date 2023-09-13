@@ -48,7 +48,8 @@ int postfixEvaluation(const std::string &postfixExpression)
 
 int main()
 {
-    std::cout << postfixEvaluation("46+2/5*7+");
+    // std::cout << postfixEvaluation("46+2/5*7+");
+    std::cout << postfixEvaluation("234*+");
 
     return 0;
 }
