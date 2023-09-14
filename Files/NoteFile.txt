@@ -81,3 +81,9 @@ you’ll get a compiler error. This happens because std::ostream specifically di
 
 ####################################################################
 
+Always use long long int when there is constrain of 10^9
+
+##########################################################
+
+
+
