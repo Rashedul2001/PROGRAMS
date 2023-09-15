@@ -3,12 +3,11 @@
 class Node
 {
 public:
-    int value;
+    int data;
     Node *next;
 
     // constructor
-
-    Node(int val) : value{val}, next{nullptr} {}
+    Node(int val) : data{val}, next{nullptr} {}
 };
 void insertAtTail(Node *&head, int val)
 {
@@ -40,24 +39,56 @@ void display(Node *head)
     Node *temp = head;
     while (temp != nullptr)
     {
-        std::cout << temp->value << " ";
+        std::cout << temp->data << " ";
         temp = temp->next;
     }
 
     std::cout << std::endl;
 }
-bool search(Node *head, int key)
+void search(Node *head, int key)
 {
     Node *temp = head;
     while (temp != nullptr)
     {
-        if (temp->value == key)
+        if (temp->data == key)
         {
-            return true;
+            std::cout << "The Data is present in the LinkedList" << std::endl;
+            return;
         }
         temp = temp->next;
     }
-    return false;
+    std::cout << "The Data is not present in the LinkedList" << std::endl;
+}
+void deleteNodeWithVal(Node *&head, int val)
+{
+    if (head == nullptr)
+    {
+        std::cerr << "Node is empty" << std::endl;
+        return;
+    }
+    if (head->data == val)
+    {
+        Node *toDelete = head;
+        head = head->next;
+        delete toDelete;
+        return;
+    }
+    Node *temp = head;
+    while (temp->next != nullptr && temp->next->data != val) // we are doing this because we want to delete the node containing the val so we should be on the Node
+    // we used temp->next != nullptr because the data can be not present in the list
+    // and remember the condition for checking if the next node is nullptr or not has to be the first condition to check
+    // or else it will do undefined behavior
+    {
+        temp = temp->next;
+    }
+    if (temp->next == nullptr)
+    {
+        std::cerr << "Can't delete.....The data is not present in te LinkedList" << std::endl;
+        return;
+    }
+    Node *toDelete = temp->next;
+    temp->next = temp->next->next;
+    delete toDelete;
 }
 
 int main()
@@ -73,7 +104,13 @@ int main()
     insertAtHead(linkedList1, -5);
     display(linkedList1);
 
-    std::cout << std::boolalpha << search(linkedList1, 10);
+    search(linkedList1, 20);
+
+    deleteNodeWithVal(linkedList1, 15);
+    display(linkedList1);
+    deleteNodeWithVal(linkedList1, 50);
+    deleteNodeWithVal(linkedList1, -5);
+    display(linkedList1);
 
     return 0;
 }
