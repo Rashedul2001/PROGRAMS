@@ -224,6 +224,46 @@ void removeCycle(Node *&head)
     }
     slowPtr->next = nullptr;
 }
+int getLength(Node *head)
+{
+    int count = 0;
+    Node *temp = head;
+    while (temp != nullptr)
+    {
+        count++;
+        temp = temp->next;
+    }
+    return count;
+}
+
+Node *appendKNodes(Node *&head, int k)
+{
+
+    if (head == nullptr)
+        return head;
+    Node *newHead = nullptr;
+    Node *newTail = nullptr;
+    Node *tail = head;
+    int length = getLength(head);
+    int count = 1;
+    k = k % length;
+    while (tail->next != nullptr)
+    {
+        if (count == length - k)
+        {
+            newTail = tail;
+        }
+        if (count == length - k + 1)
+        {
+            newHead = tail;
+        }
+        tail = tail->next;
+        count++;
+    }
+    tail->next = head;
+    newTail->next = nullptr;
+    return newHead;
+}
 
 int main()
 {
@@ -274,6 +314,15 @@ int main()
 
     removeCycle(cycleLinkedList);
     display(cycleLinkedList);
+
+    std::cout << "Adding some more elements to the LinkedList" << std::endl;
+    insertAtTail(linkedList1, 2);
+    insertAtHead(linkedList1, 52);
+    insertAtTail(linkedList1, 22);
+    display(linkedList1);
+    std::cout << "Appending the last the K Nodes of the Linked List" << std::endl;
+    linkedList1 = appendKNodes(linkedList1, 3);
+    display(linkedList1);
 
     return 0;
 }
