@@ -7,9 +7,9 @@ struct node
 };
 struct node *head;
 
-void beginsert();
-void lastinsert();
-void randominsert();
+void begInsert();
+void lastInsert();
+void randomInsert();
 void begin_delete();
 void last_delete();
 void random_delete();
@@ -24,13 +24,12 @@ void main()
         printf("\n*********Main Menu*********\n");
         printf("\nChoose one option from the following list ...\n");
         printf("\n===============================================\n");
-        printf("\n1.Insert in begining\n2.Insert at last\n3.Delete from Beginning\n4.Delete from last\n5.Search for an element\n6.Show\n7.Exit\n");
+        printf("\n1.Insert in beginning\n2.Insert at last\n3.Delete from Beginning\n4.Delete from last\n5.Search for an element\n6.Show\n7.Exit\n");
         printf("\nEnter your choice?\n");
         if (scanf("%d", &choice) == 0)
         {
             while (in = getchar() != '\n')
-                ;
-            continue;
+                continue;
         }
         // if (!scanf("%d", &choice))
         // {
@@ -40,10 +39,10 @@ void main()
         switch (choice)
         {
         case 1:
-            beginsert();
+            begInsert();
             break;
         case 2:
-            lastinsert();
+            lastInsert();
             break;
         case 3:
             begin_delete();
@@ -65,7 +64,7 @@ void main()
         }
     }
 }
-void beginsert()
+void begInsert()
 {
     struct node *ptr, *temp;
     int item;
@@ -96,7 +95,7 @@ void beginsert()
         printf("\nnode inserted\n");
     }
 }
-void lastinsert()
+void lastInsert()
 {
     struct node *ptr, *temp;
     int item;
@@ -157,7 +156,7 @@ void begin_delete()
 }
 void last_delete()
 {
-    struct node *ptr, *preptr;
+    struct node *ptr, *prePtr;
     if (head == NULL)
     {
         printf("\nUNDERFLOW");
@@ -173,10 +172,10 @@ void last_delete()
         ptr = head;
         while (ptr->next != head)
         {
-            preptr = ptr;
+            prePtr = ptr;
             ptr = ptr->next;
         }
-        preptr->next = ptr->next;
+        prePtr->next = ptr->next;
         free(ptr);
         printf("\nnode deleted\n");
     }
