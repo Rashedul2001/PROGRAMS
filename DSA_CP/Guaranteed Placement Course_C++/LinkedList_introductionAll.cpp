@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 class Node
 {
@@ -265,6 +266,50 @@ Node *appendKNodes(Node *&head, int k)
     return newHead;
 }
 
+Node *mergeTwoNodes(Node *first, Node *second)
+{
+
+    Node *dummyNode = new Node(0);
+    Node *returnThis = dummyNode;
+
+    while (first != nullptr && second != nullptr)
+    {
+        if (first->data <= second->data)
+        {
+            dummyNode->next = first;
+            first = first->next;
+        }
+        else
+        {
+            dummyNode->next = second;
+            second = second->next;
+        }
+        dummyNode = dummyNode->next; // this is a must because if we don't we will be always on the dummyNode not going to next node;
+    }
+
+    // while (second != nullptr)
+    // {
+    //     dummyNode->next = second;
+    //     second = second->next;
+    //     dummyNode = dummyNode->next;
+    // }
+    // while (first != nullptr)
+    // {
+    //     dummyNode->next = first;
+    //     first = first->next;
+    //     dummyNode = dummyNode->next;
+    // }
+    if (first != nullptr)
+    {
+        dummyNode->next = first;
+    }
+    if (second != nullptr)
+    {
+        dummyNode->next = second;
+    }
+    return returnThis->next;
+}
+
 int main()
 {
 
@@ -323,6 +368,24 @@ int main()
     std::cout << "Appending the last the K Nodes of the Linked List" << std::endl;
     linkedList1 = appendKNodes(linkedList1, 3);
     display(linkedList1);
+
+    Node *head1 = nullptr;
+    Node *head2 = nullptr;
+    std::vector<int> arr1{1, 5, 7, 9, 15}, arr2{3, 6, 6, 9, 20, 25};
+    for (int i : arr1)
+    {
+        insertAtTail(head1, i);
+    }
+    for (int i : arr2)
+    {
+        insertAtTail(head2, i);
+    }
+
+    std::cout << "Merging two sorted List:" << std::endl;
+    display(head1);
+    display(head2);
+    Node *mergedHead = mergeTwoNodes(head1, head2);
+    display(mergedHead);
 
     return 0;
 }

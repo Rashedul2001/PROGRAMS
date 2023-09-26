@@ -21,7 +21,11 @@ typedef unsigned int uint;
 #define mp make_pair
 #define vi vector<int>
 #define es '\n'
-
+#define fori(x)       \
+    for (auto &i : x) \
+    {                 \
+        cin >> i;     \
+    }
 const int mod = 1e9 + 7;
 const int N = 1e6;
 

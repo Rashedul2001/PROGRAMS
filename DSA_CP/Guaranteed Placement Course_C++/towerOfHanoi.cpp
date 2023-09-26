@@ -1,19 +1,24 @@
 #include <iostream>
-using namespace std;
-
-void towerOfHanoi(int n, char src, char dest, char helper)
+int count = 0;
+void towerOfHanoi(int disk, char source, char helper, char destination)
 {
-    static int count = 0;
-    if (n == 0)
+    if (disk <= 0)
+    {
         return;
-
-    towerOfHanoi(n - 1, src, helper, dest);
+    }
+    towerOfHanoi(disk - 1, source, destination, helper);
     count++;
-    cout << count << ": Move from " << src << " to " << dest << endl;
-    towerOfHanoi(n - 1, helper, dest, src);
+    std::cout << "Step " << count << ": Move the top disk from " << source << " to " << destination << std::endl;
+    towerOfHanoi(disk - 1, helper, source, destination);
 }
+
 int main()
 {
-    towerOfHanoi(64, 'A', 'C', 'B');
+
+    std::cout << "Enter Disk Quantity: ";
+    int disk;
+    std::cin >> disk;
+    towerOfHanoi(disk, 'A', 'B', 'C');
+
     return 0;
 }

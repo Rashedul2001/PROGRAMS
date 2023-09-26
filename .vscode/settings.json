@@ -113,5 +113,6 @@
     "xutility": "cpp"
   },
   "python.analysis.typeCheckingMode": "basic",
-  "python.formatting.provider": "none"
+  "python.formatting.provider": "none",
+  "cSpell.words": ["fori"]
 }
