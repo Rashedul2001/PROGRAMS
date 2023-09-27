@@ -337,6 +337,52 @@ Node *mergeRecursive(Node *first, Node *second)
     return result;
 }
 
+void sortOddEven(Node *&head)
+{
+    Node *evenHead = nullptr;
+    Node *evenTail = nullptr;
+    Node *oddHead = nullptr;
+    Node *oddTail = nullptr;
+    Node *current = head;
+    while (current)
+    {
+
+        if (current->data % 2)
+        {
+            if (!oddHead)
+            {
+                oddHead = current;
+                oddTail = current;
+            }
+            else
+            {
+                oddTail->next = current;
+                oddTail = current;
+            }
+        }
+        else
+        {
+            if (!evenHead)
+            {
+                evenHead = current;
+                evenTail = current;
+            }
+            else
+            {
+                evenTail->next = current;
+                evenTail = current;
+            }
+        }
+
+        current = current->next;
+    }
+    if (oddTail)
+        oddTail->next = evenHead; // also true if there is no even head, then it will assign to nullptr
+    if (evenTail)
+        evenTail->next = nullptr;
+    head = (oddHead ? oddHead : evenHead);
+}
+
 int main()
 {
 
@@ -392,13 +438,13 @@ int main()
     insertAtHead(linkedList1, 52);
     insertAtTail(linkedList1, 22);
     display(linkedList1);
-    std::cout << "Appending the last the K Nodes of the Linked List" << std::endl;
+    std::cout << "Appending k nodes to the last....." << std::endl;
     linkedList1 = appendKNodes(linkedList1, 3);
     display(linkedList1);
 
     Node *head1 = nullptr;
     Node *head2 = nullptr;
-    std::vector<int> arr1{1, 5, 7, 9, 15}, arr2{3, 6, 6, 9, 20, 25};
+    std::vector<int> arr1{20, 6, 3, 8, 1, 7}, arr2{9, 5, 10, 1, 2, 15};
     for (int i : arr1)
     {
         insertAtTail(head1, i);
@@ -420,6 +466,10 @@ int main()
     display(head1);
     display(head2);
     Node *mergeNode = mergeRecursive(head1, head2);
+    display(mergeNode);
+
+    std::cout << "sorting links to appear odd numbers before even..." << std::endl;
+    sortOddEven(mergeNode);
     display(mergeNode);
 
     return 0;
