@@ -310,6 +310,33 @@ Node *mergeTwoNodes(Node *first, Node *second)
     return returnThis->next;
 }
 
+Node *mergeRecursive(Node *first, Node *second)
+{
+
+    if (first == nullptr)
+    {
+        return second;
+    }
+    if (second == nullptr)
+    {
+        return first;
+    }
+
+    Node *result;
+    if (first->data < second->data)
+    {
+        result = first;
+        result->next = mergeRecursive(first->next, second);
+    }
+    else
+    {
+        result = second;
+        result->next = mergeRecursive(first, second->next);
+    }
+
+    return result;
+}
+
 int main()
 {
 
@@ -381,11 +408,19 @@ int main()
         insertAtTail(head2, i);
     }
 
-    std::cout << "Merging two sorted List:" << std::endl;
+    // merge with iterative method
+    // std::cout << "Merging two sorted List:" << std::endl;
+    // display(head1);
+    // display(head2);
+    // Node *mergedHead = mergeTwoNodes(head1, head2);
+    // display(mergedHead);
+
+    // merge with recursive method
+    std::cout << "Merging two sorted Linked List through Recursive Method: " << std::endl;
     display(head1);
     display(head2);
-    Node *mergedHead = mergeTwoNodes(head1, head2);
-    display(mergedHead);
+    Node *mergeNode = mergeRecursive(head1, head2);
+    display(mergeNode);
 
     return 0;
 }
