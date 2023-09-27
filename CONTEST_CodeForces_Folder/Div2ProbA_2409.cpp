@@ -1,36 +1,38 @@
-#include <iostream>
-#include <queue>
+// this code is need to be solved
 
-int main()
-{
+// #include <iostream>
+// #include <queue>
 
-    int t;
-    std::cin >> t;
-    while (t--)
-    {
-        int n;
-        std::cin >> n;
-        std::priority_queue<std::pair<std::pair<int, int>, int>> list;
-        for (int i = 0; i < n; i++)
-        {
-            int s, e;
-            std::cin >> s >> e;
-            list.push(std::make_pair(std::make_pair(e, s), i));
-        }
-        std::pair<std::pair<int, int>, int> temp = list.top();
-        list.pop();
+// int main()
+// {
 
-        if (list.top() == temp || temp.second != 0)
-        {
-            std::cout << -1 << std::endl;
-            continue;
-        }
-        else
-        {
+//     int t;
+//     std::cin >> t;
+//     while (t--)
+//     {
+//         int n;
+//         std::cin >> n;
+//         std::priority_queue<std::pair<std::pair<int, int>, int>> list;
+//         for (int i = 0; i < n; i++)
+//         {
+//             int s, e;
+//             std::cin >> s >> e;
+//             list.push(std::make_pair(std::make_pair(e, s), i));
+//         }
+//         std::pair<std::pair<int, int>, int> temp = list.top();
+//         list.pop();
 
-            std::cout << temp.first.second << std::endl;
-        }
-    }
+//         if (list.top() == temp || temp.second != 0)
+//         {
+//             std::cout << -1 << std::endl;
+//             continue;
+//         }
+//         else
+//         {
 
-    return 0;
-}
+//             std::cout << temp.first.second << std::endl;
+//         }
+//     }
+
+//     return 0;
+// }
