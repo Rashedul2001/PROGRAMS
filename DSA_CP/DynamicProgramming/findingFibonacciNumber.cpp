@@ -33,9 +33,9 @@
 // it can be hashing maybe
 
 #include <iostream>
-#include <unordered_map>
+#include <map>
 
-std::unordered_map<int, long long int> memo;
+std::map<int, long long int> memo;
 
 long long int fibonacci(int n)
 {
