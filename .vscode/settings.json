@@ -6,7 +6,7 @@
   "C_Cpp.default.cStandard": "c17",
   "C_Cpp.dimInactiveRegions": false,
   "C_Cpp.errorSquiggles": "enabled",
-  "cmake.configureOnOpen": false,
+  "cmake.configureOnOpen": true,
   "cmake.sourceDirectory": "/media/rashedul2001/SR_Drive/PersonalFiles/PROGRAMS/C++/SR Folder/ButtonCPP/Button",
   "files.associations": {
     "*.tcc": "cpp",

@@ -7,7 +7,7 @@
       "request": "launch",
       "program": "${fileDirname}\\zzExecutable.exe", // Replace with the path to your compiled C++ executable
       "args": [], // Command-line arguments for your program (if any)
-      "stopAtEntry": false, // Set to true if you want to stop at the program entry point
+      "stopAtEntry": true, // Set to true if you want to stop at the program entry point
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false, // Set to true if you want to use an external console
@@ -21,8 +21,6 @@
       ],
       "preLaunchTask": "build", // Replace with the name of the build task defined in tasks.json
       "miDebuggerPath": "gdb", // Path to your GDB executable (if not in PATH)
-      "stopOnError": true,
-      "showDevTools": false,
       "serverLaunchTimeout": 5000
     }
   ]
