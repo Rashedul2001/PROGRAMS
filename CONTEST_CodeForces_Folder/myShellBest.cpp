@@ -27,7 +27,7 @@ typedef unsigned int uint;
         cin >> i;     \
     }
 const int mod = 1e9 + 7;
-const int N = 1e6;
+const int maxN = 1e6;
 
 void Solve()
 {
@@ -44,7 +44,7 @@ int main()
     cout.tie(nullptr);
     // START:)
 
-    int T;
+    int T=1;
     cin >> T;
     while (T--)
     {

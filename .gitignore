@@ -1,4 +1,5 @@
 .tmp.driveupload/
+.tmp.drivedownload/
 C++/Guaranteed Placement Course/zzExecutable.exe
 CONTEST_CodeForces_Folder/CodeCPP.cpp
 CONTEST_CodeForces_Folder/zzExecutable.exe
@@ -19,3 +20,4 @@ DSA_CP/Guaranteed Placement Course_C++/zzExecutable.exe
 DSA_CP/DynamicProgramming/zzExecutable.exe
 JAVA/Test/TestFileJava.java
 JAVA/Test/testFileJava2.java
+DSA_CP/CP-Algorithms/zzExecutable.exe
