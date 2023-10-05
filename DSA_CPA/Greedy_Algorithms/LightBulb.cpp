@@ -26,10 +26,7 @@ int main()
 
     for (auto &it : bulbs)
     {
-        if (cost & 1)
-            it = !it;
-        else
-            it = it;
+        if (cost & 1) it = !it;else it = it;
         if (it & 1)
         {
             continue;
