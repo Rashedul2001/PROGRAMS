@@ -24,7 +24,7 @@ using namespace __gnu_pbds;
 #define all(x) (x).begin(), (x).end()
 
 const int MOD1 = 998244353;
-#ifdef Priyansh31dec
+#ifdef RASHEDUL
 #define debug(x) cerr << #x<<" "; _print(x); cerr << endl;
 #else
 #define debug(x);
@@ -54,13 +54,13 @@ template <class T> void _print(vector <T> v) {cerr << "[ "; for (T i : v) {_prin
 template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
-// void _print(pbds v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
+void _print(pbds v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 /*---------------------------------------------------------------------------------------------------------------------------*/
 ll gcd(ll a, ll b) {if (b > a) {return gcd(b, a);} if (b == 0) {return a;} return gcd(b, a % b);}
 ll expo(ll a, ll b, ll mod) {ll res = 1; while (b > 0) {if (b & 1)res = (res * a) % mod; a = (a * a) % mod; b = b >> 1;} return res;}
-void extendgcd(ll a, ll b, ll*v) {if (b == 0) {v[0] = 1; v[1] = 10; v[2] = a; return ;} extendgcd(b, a % b, v); ll x = v[1]; v[1] = v[0] - v[1] * (a / b); v[0] = x; return;} //pass an arry of size1 3
+void extendgcd(ll a, ll b, ll*v) {if (b == 0) {v[0] = 1; v[1] = 10; v[2] = a; return ;} extendgcd(b, a % b, v); ll x = v[1]; v[1] = v[0] - v[1] * (a / b); v[0] = x; return;} //pass an array of size1 3
 ll mod_add(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a + b) % m) + m) % m;}
 ll mod_mul(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a * b) % m) + m) % m;}
 ll mod_sub(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a - b) % m) + m) % m;}
@@ -78,15 +78,17 @@ void solve(){
 
 }     
 int main() {
-#ifdef Priyansh31dec
+#ifdef RASHEDUL
     freopen("Error.txt", "w", stderr);
+    // freopen("in.in", "r", stdin);
+    // freopen("out.out", "w", stdout);
 #endif
     fastio();
     auto start1 = high_resolution_clock::now();
     solve();
     auto stop1 = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop1 - start1);
-#ifdef Priyansh31dec
+#ifdef RASHEDUL
     cerr << "Time: " << duration . count() / 1000 << endl;
 #endif 
 }
