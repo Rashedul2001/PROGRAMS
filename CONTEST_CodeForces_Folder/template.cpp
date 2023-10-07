@@ -85,6 +85,8 @@ int main() {
 #endif
     fastio();
     auto start1 = high_resolution_clock::now();
+    int T; cin >> T;
+    while(T--)
     solve();
     auto stop1 = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop1 - start1);
