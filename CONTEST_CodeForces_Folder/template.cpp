@@ -36,13 +36,13 @@ typedef long double lld;
 typedef __int128 ell;
 typedef tree<pair<ll, ll>, null_type, less<pair<ll, ll>>, rb_tree_tag, tree_order_statistics_node_update > pbds; // find_by_order, order_of_key
 
-void _print(ll t) {cerr << t;}
-void _print(int t) {cerr << t;}
-void _print(string t) {cerr << t;}
-void _print(char t) {cerr << t;}
-void _print(lld t) {cerr << t;}
-void _print(double t) {cerr << t;}
-void _print(ull t) {cerr << t;}
+void _print(ll t) {cerr << t<<',';}
+void _print(int t) {cerr << t<<',';}
+void _print(string t) {cerr << t<<',';}
+void _print(char t) {cerr << t<<',';}
+void _print(lld t) {cerr << t<<',';}
+void _print(double t) {cerr << t<<',';}
+void _print(ull t) {cerr << t<<',';}
 
 template <class T, class V> void _print(pair <T, V> p);
 template <class T> void _print(vector <T> v);
@@ -75,12 +75,11 @@ ll phin(ll n) {ll number = n; if (n % 2 == 0) {number /= 2; while (n % 2 == 0) n
 ll getRandomNumber(ll l, ll r) {return uniform_int_distribution<ll>(l, r)(rng);} 
 /*--------------------------------------------------------------------------------------------------------------------------*/
 
-
-
-void solve(){
-
-}     
-int main() {
+void solve()
+{
+}
+int main()
+{
 #ifdef RASHEDUL
     freopen("Error.txt", "w", stderr);
     freopen("in.in", "r", stdin);
@@ -88,14 +87,20 @@ int main() {
     auto start1 = high_resolution_clock::now();
 #endif
     fastio();
-    int T{1}; 
+
+    int testCase = 1;
+
+    int T{1};
     cin >> T;
-    while(T--){
-    solve();
+    while (T--)
+    {
+        cout <<"Case "<<testCase<<": ";
+        solve();
+        testCase++;
     }
 #ifdef RASHEDUL
     auto stop1 = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop1 - start1);
-    cerr << "Time: " << duration . count() / 1000 << endl;
-#endif 
+    cerr << "Time: " << duration.count() / 1000 << endl;
+#endif
 }
