@@ -22,6 +22,8 @@ using namespace __gnu_pbds;
 #define set_bits __builtin_popcountll
 #define sz(x) ((int)(x).size())
 #define all(x) (x).begin(), (x).end()
+#define uni(a) (a).erase(unique(all(a)), (a).end())
+#define prec(n) fixed<<setprecision(n)
 
 const int MOD1 = 998244353;
 #ifdef RASHEDUL
