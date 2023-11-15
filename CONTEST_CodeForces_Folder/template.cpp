@@ -77,7 +77,8 @@ ll phin(ll n) {ll number = n; if (n % 2 == 0) {number /= 2; while (n % 2 == 0) n
 ll getRandomNumber(ll l, ll r) {return uniform_int_distribution<ll>(l, r)(rng);} 
 /*--------------------------------------------------------------------------------------------------------------------------*/
 
-void solve()
+bool multiTest=false;
+void solve(int testCase)
 {
 }
 int main()
@@ -91,15 +92,13 @@ int main()
     fastio();
 
     int testCase = 1;
-
     int T{1};
-    cin >> T;
+    if(multiTest) cin >> T;
     while (T--)
     {
-        cout <<"Case "<<testCase<<": ";
-        solve();
-        testCase++;
+        solve(testCase++);
     }
+
 #ifdef RASHEDUL
     auto stop1 = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop1 - start1);
