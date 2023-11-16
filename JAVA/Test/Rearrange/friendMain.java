@@ -1,3 +1,4 @@
+package Rearrange;
 public class friendMain{
     public static void main(String... args){
         System.out.println(Friend.numberOfFriends);

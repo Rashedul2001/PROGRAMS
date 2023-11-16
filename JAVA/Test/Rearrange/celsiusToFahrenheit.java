@@ -1,3 +1,4 @@
+package Rearrange;
 import java.util.Scanner;
 
 public class celsiusToFahrenheit {

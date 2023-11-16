@@ -1,3 +1,4 @@
+package Rearrange;
 
 import javax.swing.JOptionPane;
 

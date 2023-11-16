@@ -1,3 +1,4 @@
+package Rearrange;
 import java.util.*; // import all Classes in the Package 
 
 public class Greetings {

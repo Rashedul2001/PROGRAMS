@@ -1,3 +1,4 @@
+package Rearrange;
 public class insertionSort {
     public static void main(String[] args) {
         // insertion Sort

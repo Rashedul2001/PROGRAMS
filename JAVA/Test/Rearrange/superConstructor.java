@@ -1,3 +1,4 @@
+package Rearrange;
 public class superConstructor {
     public static void main(String[] args){
     Hero hero1= new Hero("IronMan",45,"Technology");

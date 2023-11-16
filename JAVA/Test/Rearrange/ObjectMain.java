@@ -1,3 +1,4 @@
+package Rearrange;
 public class ObjectMain {
     // this class should be in its own file
     // because it promotes modularity and code organization.

@@ -1,3 +1,4 @@
+package Rearrange;
 import java.util.Random;
 
 public class randomNumber {

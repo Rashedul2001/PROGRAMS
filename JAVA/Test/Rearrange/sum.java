@@ -1,3 +1,4 @@
+package Rearrange;
 public class sum {
     public static void main(String[] args) {
         int a = 6, b = 50;
