@@ -1,3 +1,4 @@
+package SR;
 public class mergeSort {
 
     public static void conquer(int arr[], int start, int mid, int end) {
