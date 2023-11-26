@@ -5,30 +5,30 @@ class Number
 {
 private:
     int data;
-    bool status;
-    void setStatus(int num)
+    bool primeStatus;
+    void setPrimeStatus(int num)
     {
         if (num <= 1)
         {
-            status = false;
+            primeStatus = false;
             return;
         }
         for (int i = 2; i <= sqrt(num); i++)
         {
             if (num % i == 0)
             {
-                status = false;
+                primeStatus = false;
                 return;
             }
         }
-        status = true;
+        primeStatus = true;
     }
 
 public:
-    Number(int num) : data{num} { setStatus(data); }
-    bool getStatus()
+    Number(int num) : data{num} { setPrimeStatus(data); }
+    bool getPrimeStatus()
     {
-        return status;
+        return primeStatus;
     }
 };
 int main()
@@ -37,7 +37,7 @@ int main()
     int num;
     std::cin >> num;
     Number n1(num);
-    if (n1.getStatus())
+    if (n1.getPrimeStatus())
         std::cout << num << " is a Prime Number." << std::endl;
     else
         std::cout << num << " is not a Prime Number." << std::endl;
