@@ -1,9 +1,10 @@
 #include <iostream>
 #define PI 3.14159265
+typedef long double ld;
 
-long double volume(double x, double y, double z) { return x  * y * z; };
-long double volume(double rad, double height) { return PI * rad * rad * height; };
-long double volume(double x) { return x * x * x; };
+ld volume(double x, double y, double z) { return x * y * z; }
+ld volume(double rad, double height) { return PI * rad * rad * height; }
+ld volume(double x) { return x * x * x; }
 
 int main()
 {
