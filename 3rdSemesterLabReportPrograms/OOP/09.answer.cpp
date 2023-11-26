@@ -17,7 +17,7 @@ public:
         return height * width;
     }
 };
-class Isosceles : area_cl
+class Isosceles :public area_cl
 {
 public:
     Isosceles(double x, double y) : area_cl(x, y) {}
