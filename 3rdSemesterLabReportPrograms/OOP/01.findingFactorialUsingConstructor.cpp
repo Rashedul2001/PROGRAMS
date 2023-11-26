@@ -1,10 +1,13 @@
 #include <iostream>
 using namespace std;
+
+typedef unsigned long long int ull;
+
 class Factorial
 {
 private:
     int baseNumber;
-    unsigned long long int factorial;
+    ull factorial;
 
 public:
     Factorial() = default;
@@ -16,7 +19,7 @@ public:
             factorial *= i;
         }
     }
-    unsigned long long int getFactResult() const { return factorial; }
+    ull getFactResult() const { return factorial; }
 };
 int main()
 {
