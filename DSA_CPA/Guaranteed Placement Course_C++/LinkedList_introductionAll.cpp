@@ -31,7 +31,8 @@ void insertAtTail(Node *&head, int val)
 void insertAtHead(Node *&head, int val)
 {
     Node *n = new Node(val);
-    n->next = head;
+    n->next = head;// this is included, there could be a head that points to a linked list with some other nodes 
+    // if not included those nodes will be lost
     head = n;
 }
 bool detectCycle(Node *head);
