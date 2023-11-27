@@ -13,7 +13,7 @@ ull fibonacci(int num)
 }
 int main()
 {
-    std::cout << "Enter how many Fibonacci numbers you want:";
+    std::cout << "Enter amount of Fibonacci Numbers you want:";
     int n;
     std::cin >> n;
     for (int i = 0; i < n; i++)
