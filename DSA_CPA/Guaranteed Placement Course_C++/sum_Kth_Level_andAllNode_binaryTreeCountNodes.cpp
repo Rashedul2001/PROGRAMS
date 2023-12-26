@@ -48,6 +48,15 @@ int sumAtK(Node *root, int k)
     }
     return sum;
 }
+int countNodes(const Node* root){
+    if(root==nullptr)return 0;
+    return countNodes(root->left)+countNodes(root->right)+1;
+}
+int sumOfAllNodes(const Node* root){
+    if (root==nullptr)return 0;
+    return root->data+ sumOfAllNodes(root->left)+sumOfAllNodes(root->right);
+}
+
 
 int main()
 {
@@ -59,7 +68,9 @@ int main()
     root->right->left = new Node(6);
     root->right->right = new Node(7);
 
-    std::cout << sumAtK(root, 2);
+    std::cout << sumAtK(root, 2) << std::endl;;
+    std::cout << countNodes(root) << std::endl;
+    std::cout << sumOfAllNodes(root) << std::endl;
 
     return 0;
 }
