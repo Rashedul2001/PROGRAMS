@@ -38,6 +38,27 @@ void printLevelOrder(Node *root)
             q.push(nullptr);
     }
 }
+int calculateHeight(const Node *root)
+{
+    if (root == nullptr)
+        return 0;
+
+    int left = calculateHeight(root->left);
+    int right = calculateHeight(root->right);
+    return std::max(left, right) + 1;
+}
+int calculateDiameter(const Node *root)
+{
+    if (root == nullptr)
+        return 0;
+    int leftHeight = calculateHeight(root->left);
+    int rightHeight = calculateHeight(root->right);
+    int currentDiameter = leftHeight + rightHeight + 1;
+
+    int leftDiameter = calculateDiameter(root->left);
+    int rightDiameter = calculateDiameter(root->right);
+    return std::max(currentDiameter, std::max(leftDiameter, rightDiameter));
+}
 
 int main()
 {
@@ -50,6 +71,8 @@ int main()
     root->right->right = new Node(7);
 
     printLevelOrder(root);
+    std::cout << "\nHeight of the tree: " << calculateHeight(root) << std::endl;
+    std::cout << "Diameter of the tree: " << calculateDiameter(root) << std::endl;
 
     return 0;
 }
