@@ -60,6 +60,27 @@ int calculateDiameter(const Node *root)
     return std::max(currentDiameter, std::max(leftDiameter, rightDiameter));
 }
 
+void sumReplace(Node *root)
+{
+    if (root == nullptr)
+        return;
+
+    sumReplace(root->left);
+    sumReplace(root->right);
+    if (root->left != nullptr)
+        root->data += root->left->data;
+    if (root->right != nullptr)
+        root->data += root->right->data;
+}
+void preOrder(Node *root)
+{
+    if (root == nullptr)
+        return;
+    std::cout << root->data << ' ';
+    preOrder(root->left);
+    preOrder(root->right);
+}
+
 int main()
 {
     struct Node *root = new Node(1);
@@ -73,6 +94,14 @@ int main()
     printLevelOrder(root);
     std::cout << "\nHeight of the tree: " << calculateHeight(root) << std::endl;
     std::cout << "Diameter of the tree: " << calculateDiameter(root) << std::endl;
+
+    std::cout << "PreOrder: ";
+    preOrder(root);
+    std::cout << std::endl;
+    std::cout << "After SumReplace, PreOrder: ";
+    sumReplace(root);
+    preOrder(root);
+    std::cout << std::endl;
 
     return 0;
 }
