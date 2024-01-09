@@ -26,6 +26,9 @@ using namespace __gnu_pbds;
 #define prec(n) fixed<<setprecision(n)
 
 const int MOD1 = 998244353;
+const int N = 1e7+10;
+int arr[N];
+
 #ifdef RASHEDUL
 #define debug(x) cerr << #x<<" "; _print(x); cerr << endl;
 #else
