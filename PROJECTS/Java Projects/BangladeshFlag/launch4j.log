@@ -1,0 +1,33 @@
+
+
+Version:	3.50
+CmdLine:	D:\PROJECTS\Java Projects\BangladeshFlag\BangladeshFlag.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	D:\PROJECTS\Java Projects\BangladeshFlag\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-18
+Substitute:	PATH = C:\Python311\Scripts\;C:\Python311\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\mingw64\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Java\jdk-20\bin;C:\Program Files\nodejs\;C:\Program Files\PowerShell\7\;D:\win apk installed location\Git\cmd;C:\Users\hacke\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\git-bash.exe;D:\win apk installed location\IntelliJ\IntelliJ IDEA Community Edition 2022.3.3\bin;C:\Users\hacke\AppData\Roaming\npm;D:\win apk installed location\VS_Code\Microsoft VS Code\bin;C:\Program Files\Java\jdk-20\bin
+JRE paths:	C:\Program Files\Java\jdk-18;C:\Python311\Scripts\;C:\Python311\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\mingw64\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Java\jdk-20\bin;C:\Program Files\nodejs\;C:\Program Files\PowerShell\7\;D:\win apk installed location\Git\cmd;C:\Users\hacke\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\git-bash.exe;D:\win apk installed location\IntelliJ\IntelliJ IDEA Community Edition 2022.3.3\bin;C:\Users\hacke\AppData\Roaming\npm;D:\win apk installed location\VS_Code\Microsoft VS Code\bin;C:\Program Files\Java\jdk-20\bin
+Check launcher:	C:\Program Files\Java\jdk-18\bin\javaw.exe (not found)
+Check launcher:	C:\Python311\Scripts\bin\javaw.exe (not found)
+Check launcher:	C:\Python311\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\dotnet\bin\javaw.exe (not found)
+Check launcher:	C:\mingw64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-20\bin\javaw.exe (OK)
+Version string: 1.020.000 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-20\bin\javaw.exe
+Launcher args:	-jar "D:\PROJECTS\Java Projects\BangladeshFlag\BangladeshFlag.exe"
+Args length:	66/32768 chars
+Exit code:	0

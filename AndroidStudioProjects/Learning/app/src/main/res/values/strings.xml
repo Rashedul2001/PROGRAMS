@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Learning</string>
+    <string-array name="country">
+        <item>USA</item>
+        <item>BANGLADESH</item>
+        <item>ENGLAND</item>
+        <item>INDIA</item>
+        <item>NEPAL</item>
+    </string-array>
+</resources>
