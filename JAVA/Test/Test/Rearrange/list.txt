@@ -1,0 +1,12 @@
+aaron-bond.better-comments-3.0.2.vsix
+CoenraadS.bracket-pair-colorizer-2-0.2.4.vsix
+CommandToInstallExtension.txt
+esbenp.prettier-vscode-10.1.0.vsix
+formulahendry.code-runner-0.12.0.vsix
+jeff-hykin.better-cpp-syntax-1.17.2.vsix
+ms-vscode.cpptools-1.17.4@win32-x64.vsix
+ms-vscode.live-server-0.5.2023080101.vsix
+PawelBorkar.jellyfish-0.0.4.vsix
+PKief.material-icon-theme-4.29.0.vsix
+ritwickdey.LiveServer-5.7.9.vsix
+vscodevim.vim-1.25.2.vsix
