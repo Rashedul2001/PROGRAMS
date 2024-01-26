@@ -24,7 +24,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewChoose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -50,4 +50,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SnackBarMessage" />
+
+    <Button
+        android:id="@+id/buttonClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear" />
 </LinearLayout>
