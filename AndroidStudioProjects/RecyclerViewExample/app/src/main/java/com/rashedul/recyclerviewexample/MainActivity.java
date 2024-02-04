@@ -13,7 +13,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<String> countryNameList = new ArrayList<>();
     private ArrayList<String> detailList = new ArrayList<>();
-    private ArrayList<Integer> imageList  = new ArrayList<>();
+    private ArrayList<Integer> imageList = new ArrayList<>();
+    private RecyclerViewAdapter adapter;
 
 
     @Override
@@ -32,14 +33,12 @@ public class MainActivity extends AppCompatActivity {
         detailList.add("This is the Flag of Germany");
         detailList.add("This is the Flag of Spain");
 
-        imageList.add(R.drawable.bangladeshFlag);
-        imageList.add(R.drawable.germanyFlag);
-        imageList.add(R.drawable.spainFlag);
+        imageList.add(R.drawable.bangladeshflag);
+        imageList.add(R.drawable.germanyflag);
+        imageList.add(R.drawable.spainflag);
 
-
-
-
-
+        adapter = new RecyclerViewAdapter(countryNameList, detailList, imageList, MainActivity.this);
+        recyclerView.setAdapter(adapter);
 
 
     }
