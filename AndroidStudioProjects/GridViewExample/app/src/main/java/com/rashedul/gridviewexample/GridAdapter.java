@@ -11,18 +11,17 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class GirdAdapter extends BaseAdapter {
+public class GridAdapter extends BaseAdapter {
 
-   Context context;
-   ArrayList<String> names = new ArrayList<>();
-   ArrayList<Integer> images = new ArrayList<>();
+    Context context;
+    ArrayList<String> names = new ArrayList<>();
+    ArrayList<Integer> images = new ArrayList<>();
 
-    public GirdAdapter(Context context, ArrayList<String> names, ArrayList<Integer> images) {
+    public GridAdapter(Context context, ArrayList<String> names, ArrayList<Integer> images) {
         this.context = context;
         this.names = names;
         this.images = images;
     }
-
 
 
     @Override
@@ -42,9 +41,9 @@ public class GirdAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        @SuppressLint("ViewHolder") View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.gridview_layout,parent,false);
+        @SuppressLint("ViewHolder") View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.gridview_layout, parent, false);
         ImageView imageView = view.findViewById(R.id.imageViewGrid);
-        TextView textView = view.findViewById(R.id.imageViewGrid);
+        TextView textView = view.findViewById(R.id.textViewGrid);
 
         textView.setText(names.get(position));
         imageView.setImageResource(images.get(position));
