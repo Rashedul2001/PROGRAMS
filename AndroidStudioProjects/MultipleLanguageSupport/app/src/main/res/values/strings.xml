@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Multiple Language Support</string>
+    <string name="hello">Hi, How are you?</string>
+    <string name="buttonMessage">Show Toast Message</string>
+    <string name="confirmation">No Night Value</string>
+    <string name="toastMessage"> Showing a Toast Message</string>
+</resources>

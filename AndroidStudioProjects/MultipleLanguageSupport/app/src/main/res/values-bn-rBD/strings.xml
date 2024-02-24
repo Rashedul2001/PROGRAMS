@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">হাই, আপনি কেমন আছেন?</string>
+    <string name="app_name">একাধিক ভাষা সমর্থন</string>
+    <string name="buttonMessage">টোস্ট বার্তা দেখান</string>
+    <string name="confirmation">নাইট ভ্যালু নেই</string>
+    <string name="toastMessage">একটি টোস্ট বার্তা দেখাচ্ছে</string>
+</resources>
