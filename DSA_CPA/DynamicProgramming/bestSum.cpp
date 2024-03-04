@@ -1,6 +1,3 @@
-// unfinished
-
-
 #include <iostream>
 #include <vector>
 #include <map>
@@ -18,12 +15,11 @@ std::vector<int> bestSum(int targetSum, std::vector<int> &numbers)
         if (tempResult.empty() || tempResult[0] != -1)
         {
             tempResult.push_back(it);
-            if (shortestCombination[0] == -1 || shortestCombination.size() < tempResult.size())
+            if (shortestCombination[0] == -1 || shortestCombination.size() > tempResult.size())
             {
                 shortestCombination = tempResult;
             }
         }
-
     }
     return shortestCombination;
 }
@@ -53,6 +49,16 @@ int main()
         std::cout << it << " ";
     }
     std::cout << std::endl;
+
+
+    numbers = {1,3,6,10,15};
+    result = bestSum(20, numbers);
+    for (auto it : result)
+    {
+        std::cout << it << " ";
+    }
+    std::cout << std::endl;
+
 
     return 0;
 }
