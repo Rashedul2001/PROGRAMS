@@ -24,8 +24,18 @@ using namespace __gnu_pbds;
 #define all(x) (x).begin(), (x).end()
 #define uni(a) (a).erase(unique(all(a)), (a).end())
 #define prec(n) fixed<<setprecision(n)
+#define rep(a,b) for(auto &a : b)
+#define rep1(n) for(ll i=0; i<(ll)(n); ++i)
+#define rep2(i,n) for(ll i=0; i<(ll)(n); ++i)
+#define rep3(i,a,b) for(ll i=(ll)(a); i<(ll)(b); ++i)
+#define rep4(i,a,b,c) for(ll i=(ll)(a); i<(ll)(b); i+=(c))
+#define per1(n) for(ll i=((ll)n)-1; i>=0; --i)
+#define per2(i,n) for(ll i=((ll)n)-1; i>=0; --i)
+#define per3(i,a,b) for(ll i=((ll)a)-1; i>=(ll)(b); --i)
+#define per4(i,a,b,c) for(ll i=((ll)a)-1; i>=(ll)(b); i-=(c))
 
 const int MOD1 = 998244353;
+const int N = 1e6+10;
 
 #ifdef RASHEDUL
 #define debug(x) cerr << #x<<" "; _print(x); cerr << endl;
@@ -78,7 +88,7 @@ ll phin(ll n) {ll number = n; if (n % 2 == 0) {number /= 2; while (n % 2 == 0) n
 ll getRandomNumber(ll l, ll r) {return uniform_int_distribution<ll>(l, r)(rng);} 
 /*--------------------------------------------------------------------------------------------------------------------------*/
 
-bool multiTest=false;
+bool multiTest = true;
 void solve(int testCase)
 {
 }
@@ -94,7 +104,8 @@ int main()
 
     int testCase = 1;
     int T{1};
-    if(multiTest) cin >> T;
+    if (multiTest)
+        cin >> T;
     while (T--)
     {
         solve(testCase++);
