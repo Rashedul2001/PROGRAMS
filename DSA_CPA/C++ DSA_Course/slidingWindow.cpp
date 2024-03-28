@@ -1,9 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <set>
-#include<queue>
-
-
+#include <queue>
 
 using namespace std;
 
@@ -37,31 +35,34 @@ using namespace std;
 //     return 0;
 // }
 
-int main(){
-    // time complexity O(n) 
+int main()
+{
+    // time complexity O(n)
     int arraySize, windowSize;
     cin >> arraySize >> windowSize;
     vector<int> array(arraySize);
-    for(auto &it: array){
+    for (auto &it : array)
+    {
         cin >> it;
     }
     deque<int> q;
     vector<int> ans;
-    for(int i=0;i<arraySize;i++){
-        if(!q.empty() and q.front()==i-windowSize)q.pop_front();
-        while(!q.empty() and array[q.back()]<=array[i]){
+    for (int i = 0; i < arraySize; i++)
+    {
+        if (!q.empty() and q.front() == i - windowSize)
+            q.pop_front();
+        while (!q.empty() and array[q.back()] <= array[i])
+        {
             q.pop_back();
         }
         q.push_back(i);
-        if(i>=windowSize-1)ans.push_back(array[q.front()]);
+        if (i >= windowSize - 1)
+            ans.push_back(array[q.front()]);
     }
-    for(auto it: ans){
-        cout << it<< " ";
+    for (auto it : ans)
+    {
+        cout << it << " ";
     }
-
-
-
-
 
     return 0;
 }

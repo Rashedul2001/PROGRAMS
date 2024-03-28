@@ -16,7 +16,9 @@
       "options": {
         "cwd": "${fileDirname}"
       },
-      "problemMatcher": ["$gcc"],
+      "problemMatcher": [
+        "$gcc"
+      ],
       "group": "build",
       "detail": "compiler: C:\\mingw64\\bin\\g++.exe"
     },
@@ -36,7 +38,9 @@
       "options": {
         "cwd": "${fileDirname}"
       },
-      "problemMatcher": ["$gcc"],
+      "problemMatcher": [
+        "$gcc"
+      ],
       "group": "build",
       "detail": "compiler: C:\\mingw64\\bin\\clang++.exe"
     },
@@ -55,7 +59,9 @@
       "options": {
         "cwd": "${fileDirname}"
       },
-      "problemMatcher": ["$msCompile"],
+      "problemMatcher": [
+        "$msCompile"
+      ],
       "group": "build",
       "detail": "compiler: cl.exe"
     },
@@ -73,7 +79,9 @@
       "options": {
         "cwd": "C:/mingw64/bin"
       },
-      "problemMatcher": ["$gcc"],
+      "problemMatcher": [
+        "$gcc"
+      ],
       "group": {
         "kind": "build",
         "isDefault": true
@@ -94,7 +102,9 @@
       "options": {
         "cwd": "C:/mingw64/bin"
       },
-      "problemMatcher": ["$gcc"],
+      "problemMatcher": [
+        "$gcc"
+      ],
       "group": "build",
       "detail": "compiler: C:/mingw64/bin/g++.exe"
     },
@@ -102,11 +112,36 @@
       "label": "build",
       "type": "shell",
       "command": "C:/mingw64/bin/g++.exe",
-      "args": ["-g", "${file}", "-o", "${fileDirname}\\zzExecutable.exe"],
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}\\zzExecutable.exe"
+      ],
       "group": {
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "type": "cppbuild",
+      "label": "C/C++: g++.exe build active file",
+      "command": "C:/mingw64/bin/g++.exe",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}\\zzExecutable.exe"
+      ],
+      "options": {
+        "cwd": "C:/mingw64/bin"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build",
+      "detail": "compiler: C:/mingw64/bin/g++.exe"
     }
   ]
 }
