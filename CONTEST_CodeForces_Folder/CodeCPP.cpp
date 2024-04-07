@@ -93,7 +93,6 @@ void solve(int testCase)
 {
     ll x, y, k;
     cin >> x >> y >> k;
-    ll numerator 
 
 }
 int main()
