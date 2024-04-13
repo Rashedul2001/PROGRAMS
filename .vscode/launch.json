@@ -1,28 +1,24 @@
 {
   "version": "0.2.0",
   "configurations": [
-    
     {
-      "name": "C++ Debug",
+      "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}\\zzExecutable.exe", // Replace with the path to your compiled C++ executable
-      "args": [], // Command-line arguments for your program (if any)
-      "stopAtEntry": true, // Set to true if you want to stop at the program entry point
-      "cwd": "${workspaceFolder}",
-      "environment": [],
-      "externalConsole": false, // Set to true if you want to use an external console
-      "MIMode": "gdb", // Debugger mode (e.g., gdb, lldb)
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "d:/pFolder/Debug",
+      "program": "d:/pFolder/Debug/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
           "text": "-enable-pretty-printing",
           "ignoreFailures": true
         }
-      ],
-      "preLaunchTask": "build", // Replace with the name of the build task defined in tasks.json
-      "miDebuggerPath": "gdb", // Path to your GDB executable (if not in PATH)
-      "serverLaunchTimeout": 5000
+      ]
     }
   ]
 }
