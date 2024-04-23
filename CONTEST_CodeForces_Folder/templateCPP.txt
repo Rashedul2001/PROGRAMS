@@ -114,6 +114,6 @@ int main()
 #ifdef RASHEDUL
     auto stop1 = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop1 - start1);
-    cerr << "Time: " << duration.count() / 1000 << endl;
+    cerr << "Time: " << duration.count() << " ms" << endl;
 #endif
 }
