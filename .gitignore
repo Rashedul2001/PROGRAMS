@@ -59,3 +59,5 @@ bin/
 CONTEST_CodeForces_Folder/drawing.drawio
 CONTEST_CodeForces_Folder/CodeCPP.cpp
 CONTEST_CodeForces_Folder/CodeCPP.exe
+AssemblyLanguage/temp.asm
+AssemblyLanguage/mycode.asm
