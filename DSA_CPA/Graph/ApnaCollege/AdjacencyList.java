@@ -12,9 +12,8 @@ public class AdjacencyList {
 
     }
 
-    public static void createGraph(ArrayList<Edge> graph[]) {
-        for (int i = 0; i < graph.length; i++)
-            graph[i] = new ArrayList<Edge>();
+    public static void createGraph(ArrayList<Edge>[] graph) {
+        for (int i = 0; i < graph.length; i++) graph[i] = new ArrayList<>();
 
         graph[0].add(new Edge(0, 2));
 
@@ -34,7 +33,7 @@ public class AdjacencyList {
         int v = 4;
 
         @SuppressWarnings("unchecked") // following line is throwing an error
-        ArrayList<Edge> graph[] = new ArrayList[v];
+        ArrayList<Edge>[] graph = new ArrayList[v];
         // System.out.println("This is Working");
         createGraph(graph);
 
