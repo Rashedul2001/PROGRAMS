@@ -1,17 +1,6 @@
 import java.util.ArrayList;
 
 public class AdjacencyList {
-    public static class Edge {
-        int source;
-        int destination;
-
-        public Edge(int source, int destination) {
-            this.source = source;
-            this.destination = destination;
-        }
-
-    }
-
     public static void createGraph(ArrayList<Edge>[] graph) {
         for (int i = 0; i < graph.length; i++) graph[i] = new ArrayList<>();
 
@@ -41,6 +30,17 @@ public class AdjacencyList {
         for (int i = 0; i < graph[2].size(); i++) {
             Edge edge = graph[2].get(i);
             System.out.print(edge.destination + " ");
+        }
+
+    }
+
+    public static class Edge {
+        int source;
+        int destination;
+
+        public Edge(int source, int destination) {
+            this.source = source;
+            this.destination = destination;
         }
 
     }

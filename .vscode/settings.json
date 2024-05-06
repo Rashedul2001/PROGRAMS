@@ -60,6 +60,8 @@
     "ostream": "cpp",
     "numeric": "cpp",
     "vector": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "istream": "cpp",
+    "bitset": "cpp"
   }
 }

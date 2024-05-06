@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.stream.IntStream;
 
-public class BFS {
+public class BFS_DFS {
     public static void createGraph(ArrayList<Edge>[] graph) {
         IntStream.range(0, graph.length).forEach(i -> graph[i] = new ArrayList<>());
         graph[0].add(new Edge(0, 1));
@@ -14,7 +15,6 @@ public class BFS {
 
         graph[2].add(new Edge(2, 0));
         graph[2].add(new Edge(2, 4));
-
 
         graph[3].add(new Edge(3, 1));
         graph[3].add(new Edge(3, 4));
@@ -50,16 +50,28 @@ public class BFS {
 
     }
 
+    public static void DFS(ArrayList<Edge>[] graph, boolean[] vis, int start) {
+        System.out.print(start + " ");
+        vis[start] = true;
+        for (int i = 0; i < graph[start].size(); i++) {
+            Edge e = graph[start].get(i);
+            if (!vis[e.dst]) {
+                DFS(graph, vis, e.dst);
+            }
+        }
+    }
+
     public static void main(String... args) {
         int v = 7;
-    /*
-        1--3
-       /   | \
-      0    |   5 -- 6
-      \    |  /
-       2---4
-     */
+        /*
+         * 1--3
+         * / | \
+         * 0 | 5 -- 6
+         * \ | /
+         * 2---4
+         */
         ArrayList<Edge>[] graph = new ArrayList[v];
+        // should use List<List<Edge>> instead
         createGraph(graph);
         boolean[] vis = new boolean[v];
         // this will also work for graph which has separated vertices
@@ -69,6 +81,8 @@ public class BFS {
             }
         }
         System.out.println();
+        Arrays.fill(vis, false);
+        IntStream.range(0, v).filter(i -> !vis[i]).forEachOrdered(i -> DFS(graph, vis, i));
     }
 
     public static class Edge {
