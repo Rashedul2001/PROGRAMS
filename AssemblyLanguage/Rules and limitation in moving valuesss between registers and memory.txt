@@ -1,0 +1,55 @@
+Certainly! In **8086 assembly language**, there are rules and limitations when it comes to moving values between registers and memory. Let's explore them:
+
+1. **Register-to-Register Moves**:
+   - You can directly move data between general-purpose registers (e.g., `AX`, `BX`, `CX`, `DX`, etc.).
+   - Example: `mov ax, bx` copies the value from `BX` to `AX`.
+
+2. **Immediate Values**:
+   - You can load immediate values (constants) into registers.
+   - Example: `mov ax, 42` loads the value `42` into `AX`.
+
+3. **Memory-to-Register Moves**:
+   - You can load data from memory into a register.
+   - Example: `mov ax, [myVar]` loads the value stored at memory location `myVar` into `AX`.
+   - Note that the square brackets `[]` indicate memory access.
+
+4. **Register-to-Memory Moves**:
+   - You can store the value from a register into memory.
+   - Example: `mov [myVar], ax` stores the value in `AX` into memory location `myVar`.
+
+5. **Segment Registers**:
+   - Segment registers (`CS`, `DS`, `ES`, `SS`) cannot be directly loaded with immediate values.
+   - You must use an intermediate general-purpose register (usually `AX`) to set segment registers.
+   - Example: 
+     ```assembly
+     mov ax, @data ; Load data segment value into AX
+     mov ds, ax    ; Initialize DS with the value in AX
+     ```
+
+6. **Memory-to-Memory Moves**:
+   - Directly moving data from one memory location to another is not allowed.
+   - You need an intermediate register to transfer data between memory locations.
+   - Example:
+     ```assembly
+     mov si, sourceAddr
+     mov di, destAddr
+     movsb ; Move a byte from [SI] to [DI]
+     ```
+
+7. **Stack Operations**:
+   - Pushing and popping values onto/from the stack involve memory moves.
+   - Example:
+     ```assembly
+     push ax ; Push AX onto the stack
+     pop bx  ; Pop a value from the stack into BX
+     ```
+
+Remember these rules when writing assembly code. Properly managing registers and memory is essential for efficient and correct programs. Happy coding! 🚀🔍
+
+If you have more specific questions or need further clarification, feel free to ask! 😊👾
+
+Source: Conversation with Copilot, 5/23/2024
+(1) assembly - MOVing between two memory addresses - Stack Overflow. https://stackoverflow.com/questions/1299077/moving-between-two-memory-addresses.
+(2) Instruction Set - Hussein's Space. http://www.husseinsspace.com/teaching/udw/1996/asmnotes/chaptwo.htm.
+(3) Swap between two variables by reference in assembly 8086. https://stackoverflow.com/questions/74630506/swap-between-two-variables-by-reference-in-assembly-8086.
+(4) assembly - Moving register values to memory variables in section data .... https://stackoverflow.com/questions/55683367/moving-register-values-to-memory-variables-in-section-data.

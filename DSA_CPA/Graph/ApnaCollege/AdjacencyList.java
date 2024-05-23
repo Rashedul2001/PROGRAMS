@@ -2,7 +2,9 @@ import java.util.ArrayList;
 
 public class AdjacencyList {
     public static void createGraph(ArrayList<Edge>[] graph) {
-        for (int i = 0; i < graph.length; i++) graph[i] = new ArrayList<>();
+        for (int i = 0; i < graph.length; i++) {
+            graph[i] = new ArrayList<>();
+        }
 
         graph[0].add(new Edge(0, 2));
 

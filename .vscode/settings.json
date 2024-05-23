@@ -63,5 +63,9 @@
     "iostream": "cpp",
     "istream": "cpp",
     "bitset": "cpp"
-  }
+  },
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "files.autoSave": "afterDelay",
+  "editor.fontFamily": "Fira Code"
 }
