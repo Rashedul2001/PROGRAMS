@@ -45,6 +45,7 @@ public class AllPaths {
         ArrayList<Boolean> vis = new ArrayList<>(Collections.nCopies(v, Boolean.FALSE));
         vis.set(source,true);
         printAllPaths(graph, source, destination, String.valueOf(source), vis);
+        scanner.close();
     }
 
     public static class Edge {
