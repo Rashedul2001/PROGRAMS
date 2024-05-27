@@ -1,96 +1,130 @@
-
-show databases;
-drop database 1Bank_DataBase;
-
-/*DataBase Schema*/
 create database Bank_DataBase_1;
 use Bank_DataBase_1;
+
+/*
+1.
+Consider the following bank database relations, here the primary keys are (pk).
+Branch (branch_name(pk), branch_city, assets)
+Customer (customer_name(pk), customer_street, customer_city)
+Loan (loan_number(pk), branch_name(pk). amount)
+Borrower (customer_name(pk),loan_number)
+Account (account_number(pk),branch_name, balance)
+Depositor (customer_name(pk), account number)
+
+"give me SQL expression for building this schema and some sample data and answer following questions"
+
+Write down the SQL expressions for the following queries.
+i. Find all customers who have account but no loan in bank.
+ii. Delete all loan amount between 10000/- and 25000/-
+iii. Find the names of all customers who have a loan at Perryridge branch.
+iv. Delete all loans with amount in the range 0 to 500.
+
+*/
+
 CREATE TABLE Branch (
-  branch_name VARCHAR(255) PRIMARY KEY,
-  branch_city VARCHAR(255),
-  assets DECIMAL(10,2)
+    branch_name VARCHAR(255) PRIMARY KEY,
+    branch_city VARCHAR(255),
+    assets DECIMAL(15, 2)
 );
+
 CREATE TABLE Customer (
-  customer_name VARCHAR(255) PRIMARY KEY,
-  customer_street VARCHAR(255),
-  customer_city VARCHAR(255)
+    customer_name VARCHAR(255) PRIMARY KEY,
+    customer_street VARCHAR(255),
+    customer_city VARCHAR(255)
 );
+
 CREATE TABLE Loan (
-  branch_number INTEGER,
-  branch_name VARCHAR(255),
-  amount DECIMAL(10,2),
-  PRIMARY KEY (branch_number, branch_name),
-  FOREIGN KEY (branch_name) REFERENCES Branch(branch_name)
+    loan_number INT PRIMARY KEY,
+    branch_name VARCHAR(255),
+    amount DECIMAL(15, 2),
+    FOREIGN KEY (branch_name) REFERENCES Branch(branch_name)
 );
+
 CREATE TABLE Borrower (
-    customer_name VARCHAR(50),
+    customer_name VARCHAR(255),
     loan_number INT,
     PRIMARY KEY (customer_name, loan_number),
-    FOREIGN KEY (customer_name) REFERENCES Customer(customer_name)
+    FOREIGN KEY (customer_name) REFERENCES Customer(customer_name),
+    FOREIGN KEY (loan_number) REFERENCES Loan(loan_number)
 );
+
 CREATE TABLE Account (
-  account_number INTEGER PRIMARY KEY,
-  branch_name VARCHAR(255),
-  balance DECIMAL(10,2),
-  FOREIGN KEY (branch_name) REFERENCES Branch(branch_name)
+    account_number INT PRIMARY KEY,
+    branch_name VARCHAR(255),
+    balance DECIMAL(15, 2),
+    FOREIGN KEY (branch_name) REFERENCES Branch(branch_name)
 );
+
 CREATE TABLE Depositor (
-  customer_name VARCHAR(255),
-  account_number INTEGER,
-  PRIMARY KEY (customer_name, account_number),
-  FOREIGN KEY (customer_name) REFERENCES Customer(customer_name),
-  FOREIGN KEY (account_number) REFERENCES Account(account_number)
+    customer_name VARCHAR(255),
+    account_number INT,
+    PRIMARY KEY (customer_name, account_number),
+    FOREIGN KEY (customer_name) REFERENCES Customer(customer_name),
+    FOREIGN KEY (account_number) REFERENCES Account(account_number)
 );
 
-/*Sample Data*/
-INSERT INTO Branch (branch_name, branch_city, assets)
-VALUES ('Main Street', 'New York', 1000000.00),
-       ('Perryridge', 'Chicago', 750000.00);
+-- Insert data into Branch table
+INSERT INTO Branch (branch_name, branch_city, assets) VALUES
+('Downtown', 'New York', 1000000),
+('Uptown', 'New York', 500000),
+('Midtown', 'New York', 750000),
+('Perryridge', 'San Francisco', 600000);
 
-INSERT INTO Customer (customer_name, customer_street, customer_city)
-VALUES ('John Doe', '123 Main St', 'New York'),
-       ('Jane Smith', '456 Elm St', 'Chicago');
+-- Insert data into Customer table
+INSERT INTO Customer (customer_name, customer_street, customer_city) VALUES
+('John Doe', '123 Elm St', 'New York'),
+('Jane Smith', '456 Oak St', 'New York'),
+('Alice Johnson', '789 Pine St', 'New York'),
+('Bob Brown', '101 Maple St', 'San Francisco');
 
-INSERT INTO Loan (branch_number, branch_name, amount)
-VALUES (1, 'Main Street', 30000.00),
-       (2, 'Perryridge', 15000.00),
-       (1, 'Main Street', 7000.00);  -- John Doe has two loans
+-- Insert data into Loan table
+INSERT INTO Loan (loan_number, branch_name, amount) VALUES
+(1001, 'Downtown', 5000),
+(1002, 'Uptown', 10000),
+(1003, 'Midtown', 15000),
+(1004, 'Perryridge', 20000),
+(1005, 'Perryridge', 30000);
 
-INSERT INTO Borrower (customer_name, loan_number) VALUES ('John Doe', 1);
--- insert into borrower (customer_name, loan_number) values ('jenny',2);
+-- Insert data into Borrower table
+INSERT INTO Borrower (customer_name, loan_number) VALUES
+('John Doe', 1001),
+('Jane Smith', 1002),
+('Alice Johnson', 1003),
+('Bob Brown', 1004);
 
-INSERT INTO Account (account_number, branch_name, balance)
-VALUES (1234, 'Main Street', 5000.00),
-       (5678, 'Perryridge', 2000.00);
+-- Insert data into Account table
+INSERT INTO Account (account_number, branch_name, balance) VALUES
+(2001, 'Downtown', 3000),
+(2002, 'Uptown', 4000),
+(2003, 'Midtown', 5000),
+(2004, 'Perryridge', 6000);
 
-INSERT INTO Depositor (customer_name, account_number)
-VALUES ('John Doe', 1234),
-       ('Jane Smith', 5678);
-
-/*SQL Expression for Queries*/
-show tables;
+-- Insert data into Depositor table
+INSERT INTO Depositor (customer_name, account_number) VALUES
+('John Doe', 2001),
+('Jane Smith', 2002),
+('Alice Johnson', 2003),
+('Bob Brown', 2004);
 
 -- (i)
-SELECT DISTINCT C.customer_name
-FROM Customer C
-JOIN Depositor D ON C.customer_name = D.customer_name
-LEFT JOIN Borrower B ON C.customer_name = B.customer_name
-WHERE B.loan_number IS NULL;
--- to disable safe mode in database
-set sql_safe_updates = 0;
-set sql_safe_updates = 1;
+SELECT DISTINCT c.customer_name
+FROM Customer c
+JOIN Depositor d ON c.customer_name = d.customer_name
+LEFT JOIN Borrower b ON c.customer_name = b.customer_name
+WHERE b.loan_number IS NULL;
+
 -- (ii)
 DELETE FROM Loan
 WHERE amount BETWEEN 10000 AND 25000;
--- (iii) this is not correct I can't understand the question it's not making sence 
-SELECT DISTINCT B.customer_name
-FROM Borrower B
-JOIN Loan L ON B.loan_number = L.branch_number
-WHERE L.branch_name = 'Perryridge';
+
+-- (iii)
+SELECT DISTINCT c.customer_name
+FROM Customer c
+JOIN Borrower b ON c.customer_name = b.customer_name
+JOIN Loan l ON b.loan_number = l.loan_number
+WHERE l.branch_name = 'Perryridge';
+
 -- (iv)
 DELETE FROM Loan
 WHERE amount BETWEEN 0 AND 500;
-
-
-
 
