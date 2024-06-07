@@ -42,7 +42,7 @@
 // 07 Quadratic equation solution
 
 #include <stdio.h>
-
+#include<math.h>
 int main()
 {
 	int i = 5;
@@ -67,7 +67,7 @@ int main()
 	else
 	{
 		double some = (-b / (2 * a));
-		root1 = root2 = (sqrt(-dis));
+		root1 = root2 = sqrt(-dis)/(2*a);
 		printf("Root1 = %lf + %lfi\n", some, root1);
 		printf("Root2 = %lf -%lfi\n", some, root1);
 	}
