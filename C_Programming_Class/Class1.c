@@ -45,8 +45,12 @@
 #include<math.h>
 int main()
 {
-	int i = 5;
-	//	printf("%d %d %d %d %d\n",i++,++i,i,--i,i--);
+	int i = 3;
+    printf("%d %d %d %d %d\n",i--,--i,i--,--i,i--);//firstly know that the operation will 
+	//happen right to left now for rightmost element i-- first assignment will happen then decrement
+	// so now i = 2 then again for --i decrement will happen first now i = 1 but assignment will wait
+	// now again all the pre ans post decrement will happen but the assignment for pre decrement will wait
+	// after all the operation the last i value will be assigned to the pre dec %d placeholders
 
 	double a, b, c;
 	printf("Enter value of a, b, c:");
