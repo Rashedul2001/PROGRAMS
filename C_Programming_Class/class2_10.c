@@ -12,7 +12,7 @@ int main()
 
 	for (int i = 1; i <= n; i++){
 		double temp =1;
-		int j = i;
+		int j = i;//2 3
 		while(j--)
 		temp*=i;
 		ans += (1/temp);	
