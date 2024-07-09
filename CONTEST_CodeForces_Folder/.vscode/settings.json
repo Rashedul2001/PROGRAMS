@@ -63,8 +63,7 @@
     "iostream": "cpp",
     "istream": "cpp",
     "bitset": "cpp",
-    "cstddef": "c",
-    "new": "cpp"
+    "cstddef": "c"
   },
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.autoImportCompletions": true,

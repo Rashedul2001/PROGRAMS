@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09b11f3d-8884-4fef-84fc-fc3367633093" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ApnaCollege/AllPaths.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApnaCollege/CycleDetectionDirectedGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.vscode/c_cpp_properties.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vscode/c_cpp_properties.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vscode/launch.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3rdSemesterLabReportPrograms/LabReportCoverPage.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../3rdSemesterLabReportPrograms/LabReportCoverPage.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/app/src/main/java/com/rashedul/todolist/FileHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/app/src/main/java/com/rashedul/todolist/FileHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/app/src/main/java/com/rashedul/todolist/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/app/src/main/java/com/rashedul/todolist/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/app/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/gradle/libs.versions.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/ToDoList/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CodeBook.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../CodeBook.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApnaCollege/AdjacencyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApnaCollege/AdjacencyList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C_Programming_Class/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../C_Programming_Class/a.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
