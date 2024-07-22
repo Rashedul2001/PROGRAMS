@@ -28,13 +28,7 @@ int main()
     {
         if (cost & 1)
             it = !it;
-        else
-            it = it;
-        if (it & 1)
-        {
-            continue;
-        }
-        else
+        if ((it & 1) == 0)
             cost++;
     }
     cout << cost << endl;
