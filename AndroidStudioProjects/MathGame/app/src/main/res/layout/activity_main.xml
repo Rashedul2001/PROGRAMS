@@ -17,26 +17,57 @@
         android:layout_width="175dp"
         android:layout_height="75dp"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#9C27B0"
-        android:text="ADDITION" />
+        android:text="ADDITION"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/buttonSub"
         android:layout_width="175dp"
         android:layout_height="75dp"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#9C27B0"
-        android:text="SUBTRACTION" />
+        android:text="SUBTRACTION"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/buttonMul"
         android:layout_width="175dp"
         android:layout_height="75dp"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#9C27B0"
-        android:text="MULTIPLICATION" />
+        android:text="MULTIPLICATION"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonContinue"
+            android:layout_width="150dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#9C27B0"
+            android:text="Previous Games" />
+
+        <Button
+            android:id="@+id/buttonHigestScore"
+            android:layout_width="150dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#9C27B0"
+            android:text="Higest Scores" />
+    </LinearLayout>
 </LinearLayout>
 
