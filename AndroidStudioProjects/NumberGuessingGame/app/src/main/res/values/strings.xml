@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Number Guessing Game</string>
+    <string name="info">Choose the number of digits for my secret number. You\'ll have 10 tries to guess it!</string>
+</resources>
