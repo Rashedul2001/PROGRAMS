@@ -1,0 +1,36 @@
+In Competitive Programming (CP), various techniques and algorithms are commonly used to solve problems efficiently. Here’s a list of key techniques:
+
+1. **Greedy Algorithms** - Selecting the best possible choice at each step.
+2. **Dynamic Programming (DP)** - Solving problems by breaking them down into simpler subproblems and storing solutions to avoid redundancy.
+3. **Divide and Conquer** - Splitting a problem into smaller parts, solving them independently, and combining results.
+4. **Binary Search** - Efficiently searching in sorted data by dividing the search space.
+5. **Two-Pointer Technique** - Using two indices to traverse data, often in arrays, to find pairs or solve range-based problems.
+6. **Sliding Window Technique** - Maintaining a "window" over a subset of data to solve range-based or subarray problems.
+7. **Backtracking** - Trying out possible solutions and undoing choices to find the correct answer.
+8. **Depth-First Search (DFS) and Breadth-First Search (BFS)** - Used for graph and tree traversals.
+9. **Graph Algorithms**:
+   - Shortest Path (Dijkstra's, Bellman-Ford)
+   - Minimum Spanning Tree (Prim's, Kruskal's)
+   - Topological Sorting
+   - Strongly Connected Components (Kosaraju’s, Tarjan’s)
+   - Bipartite Graph Checking
+10. **Union-Find (Disjoint Set Union - DSU)** - Used for managing and merging disjoint sets.
+11. **Segment Trees and Binary Indexed Trees (Fenwick Trees)** - For range queries and updates.
+12. **Heavy-Light Decomposition** - Decomposition technique for optimizing queries on trees.
+13. **Square Root Decomposition (Mo's Algorithm)** - Efficiently answering range queries by decomposing the data into blocks.
+14. **Bit Manipulation** - Using binary operations to optimize calculations and handle sets.
+15. **String Algorithms**:
+   - KMP (Knuth-Morris-Pratt) for pattern matching
+   - Trie (Prefix Tree)
+   - Suffix Array and Suffix Tree
+   - Z-Algorithm for substring search
+16. **Number Theory**:
+   - Modular Arithmetic and Fast Exponentiation
+   - Primality Testing and Sieve of Eratosthenes
+   - GCD and LCM Calculations (Euclidean Algorithm)
+   - Chinese Remainder Theorem (CRT)
+17. **Game Theory** - Strategies like Nim Game and Grundy numbers for solving games.
+18. **Convex Hull and Computational Geometry** - Used for handling geometric problems.
+19. **Randomized Algorithms** - Monte Carlo and Las Vegas algorithms for probabilistic solutions.
+
+These techniques form a robust toolkit for approaching and solving a wide variety of problems in competitive programming. Each technique has a set of scenarios where it excels, and mastering them requires practice and understanding of their nuances.
