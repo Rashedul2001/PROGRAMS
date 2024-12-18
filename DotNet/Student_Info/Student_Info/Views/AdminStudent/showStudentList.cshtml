@@ -1,0 +1,44 @@
+﻿@model List<Student_Info.Models.Domain.StudentModel>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1 class="text-center">All Students</h1>
+    </div>
+</div>
+<div class="container py-5">
+    <table class="table">
+       @if(Model != null && Model.Any()){
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Phone Number</th>
+                <th>Session</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.StudentId</td>
+                    <td>@student.StudentName</td>
+                    <td>@student.Department</td>
+                    <td>@student.StudentPhone</td>
+                    <td>@student.Session</td>
+                    <td><a asp-controller="AdminStudent" asp-action="EditStudent" asp-route-id = "@student.StudentId">Edit</a></td>
+                </tr>
+            }
+
+        </tbody>
+       }
+       else{
+           <tr><th>No Student Found</th></tr>
+       }
+    </table>
+</div>

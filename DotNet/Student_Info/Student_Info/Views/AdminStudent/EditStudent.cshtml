@@ -1,0 +1,38 @@
+﻿
+@model Student_Info.Models.ViewModel.EditStudentRequest
+
+
+
+<div class="bg-secondary bg-opacity-10 py-2">
+	<div class="container " >
+		<h1 class="text-center">Edit Student Details</h1>
+	</div>
+	</div>
+<div class="container py-5">
+	<form method="post" asp-action="EditStudent">
+		<div class="mb-3">
+			<label for="studentName" class="form-label">ID:</label>
+			<input type="text" class="form-control" id="studentId" name="studentId" asp-for="StudentId" readonly>
+		</div>
+		<div class="mb-3">
+			<label for="studentName" class="form-label">Name:</label>
+			<input type="text" class="form-control" id="studentName" name="studentName" asp-for="StudentName" required>
+		</div>
+		<div class="mb-3">
+			<label for="department" class="form-label">Department:</label>
+			<input type="text" class="form-control" id="department" name="department" asp-for="Department" required>
+		</div>
+		<div class="mb-3">
+			<label for="StudentPhone" class="form-label">Student Phone Number:</label>
+			<input type="text" class="form-control" id="department" name="StudentPhone" asp-for="StudentPhone" required>
+		</div>
+		<div class="mb-3">
+			<label for="Session" class="form-label">Session:</label>
+			<input type="text" class="form-control" id="Session" name="Session" asp-for="Session" required>
+		</div>
+        <div class="mb-3 d-flex justify-content-between">
+            <button type="submit" class="btn btn-success">Update Student</button>
+            <button type="submit" class="btn btn-danger" asp-controller="AdminStudent" asp-action="DeleteStudent">Delete</button>
+        </div>
+	</form>
+</div>
