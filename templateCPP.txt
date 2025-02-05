@@ -90,6 +90,10 @@ ll getRandomNumber(ll l, ll r) {return uniform_int_distribution<ll>(l, r)(rng);}
 bool isPrime(ll num){if (num <= 1)return false;if (num <= 3)return true;if (num % 2 == 0 or num % 3 == 0)return false;for (int i = 5; i * i <= num; i += 6){if (num % i == 0 or num % (i + 2) == 0)return false;}return true;}
 /*--------------------------------------------------------------------------------------------------------------------------*/
 
+
+void preCal()
+{
+}
 bool multiTest = true;
 void solve(int testCase)
 {
@@ -103,6 +107,7 @@ int main()
     auto start1 = high_resolution_clock::now();
 #endif
     fastio();
+    preCal();
 
     int testCase = 1;
     int T{1};

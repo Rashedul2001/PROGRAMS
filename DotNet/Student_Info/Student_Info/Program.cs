@@ -1,11 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Student_Info.Data;
+using Student_Info.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<StudentDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("StudentDbConnectionString")));
+//builder.Services.AddScoped<IStudentRepo, StudentRepo>();
 
 var app = builder.Build();
 

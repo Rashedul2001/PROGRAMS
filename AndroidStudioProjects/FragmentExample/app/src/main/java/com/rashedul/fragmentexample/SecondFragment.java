@@ -1,4 +1,4 @@
-﻿package com.rashedul.fragmentexample;
+package com.rashedul.fragmentexample;
 
 import android.os.Bundle;
 
@@ -10,11 +10,9 @@ import android.view.ViewGroup;
 
 public class SecondFragment extends Fragment {
 
-
     public SecondFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

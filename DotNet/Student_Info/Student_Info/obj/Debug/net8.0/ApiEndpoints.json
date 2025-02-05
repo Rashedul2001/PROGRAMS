@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "ContainingType": "Student_Info.Controllers.ImageController",
+    "Method": "Index",
+    "RelativePath": "api/Image",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

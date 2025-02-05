@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ListFragmentExample</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="divisionNames">
+        <item>Rajshahi</item>
+        <item>Dhaka</item>
+        <item>Comilla</item>
+        <item>Sylhet</item>
+        <item>chittagong</item>
+    </string-array>
+
+
+
+
+</resources>

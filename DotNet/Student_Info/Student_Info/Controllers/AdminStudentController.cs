@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Student_Info.Data;
 using Student_Info.Models.Domain;
@@ -20,29 +19,30 @@ namespace Student_Info.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddStudent(AddStudentRequest addStudentRequest)
+        public async Task<IActionResult> AddStudent(AddStudentRequest addStudentRequest)
         {
-            var student = new StudentModel {
+            var student = new StudentModel
+            {
                 StudentName = addStudentRequest.StudentName,
                 Department = addStudentRequest.Department,
                 StudentPhone = addStudentRequest.StudentPhone,
                 Session = addStudentRequest.Session
             };
-            _studentDbContext.Students.Add(student);
-            _studentDbContext.SaveChanges();
+            await _studentDbContext.Students.AddAsync(student);
+            await _studentDbContext.SaveChangesAsync();
 
 
             return RedirectToAction("ShowStudentList");
         }
-        public IActionResult ShowStudentList()
+        public async Task<IActionResult> ShowStudentList()
         {
-            var allStudents = _studentDbContext.Students.ToList();
+            var allStudents = await _studentDbContext.Students.ToListAsync();
             return View(allStudents);
         }
         [HttpGet]
-        public IActionResult  EditStudent(int id)
+        public async Task<IActionResult> EditStudent(int id)
         {
-            var student = _studentDbContext.Students.FirstOrDefault(x => x.StudentId == id);
+            var student = await _studentDbContext.Students.FirstOrDefaultAsync(x => x.StudentId == id);
             if (student != null)
             {
                 var editStudent = new EditStudentRequest
@@ -59,7 +59,7 @@ namespace Student_Info.Controllers
             return View(null);
         }
         [HttpPost]
-        public IActionResult EditStudent(EditStudentRequest editedStudent)
+        public async Task<IActionResult> EditStudent(EditStudentRequest editedStudent)
         {
             var student = new StudentModel
             {
@@ -70,7 +70,7 @@ namespace Student_Info.Controllers
                 Session = editedStudent.Session
 
             };
-            var existingStudent = _studentDbContext.Students.Find(student.StudentId);
+            var existingStudent = await _studentDbContext.Students.FindAsync(student.StudentId);
             if (existingStudent != null)
             {
                 existingStudent.StudentName = student.StudentName;
@@ -78,20 +78,20 @@ namespace Student_Info.Controllers
                 existingStudent.StudentPhone = student.StudentPhone;
                 existingStudent.Session = student.Session;
 
-                _studentDbContext.SaveChanges();
+                await _studentDbContext.SaveChangesAsync();
 
             }
 
             return RedirectToAction("ShowStudentList");
         }
         [HttpPost]
-        public IActionResult DeleteStudent(EditStudentRequest editStudent)
+        public async Task<IActionResult> DeleteStudent(EditStudentRequest editStudent)
         {
-            var student = _studentDbContext.Students.Find(editStudent.StudentId);
+            var student = await _studentDbContext.Students.FindAsync(editStudent.StudentId);
             if (student != null)
             {
                 _studentDbContext.Students.Remove(student);
-                _studentDbContext.SaveChanges();
+                await _studentDbContext.SaveChangesAsync();
             }
             return RedirectToAction("ShowStudentList");
         }
