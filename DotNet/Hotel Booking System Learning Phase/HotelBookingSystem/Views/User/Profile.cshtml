@@ -1,0 +1,25 @@
+﻿@model HotelBookingSystem.Models.ViewModel.UserViewModel
+
+@{
+    ViewData["Title"] = "Profile";
+}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                   <h4 class="card-group card-header">@Model.UserId @Model.UserName</h4> 
+                    <p class="card-text">@Model.UserPhone</p>
+                    <p class="card-text">@Model.UserAddress</p>
+                    <p class="card-text">@Model.UserDOB.ToShortDateString()</p>
+
+                    <a href="@Url.Action("EditProfile", new { id = @Model.UserId })" class="btn btn-primary mb-2">Edit Profile</a>
+                    <form asp-action="DeleteProfile" method="post" class="d-inline">
+                        <input type="hidden" name="id" value="@Model.UserId" />
+                        <button type="submit" class="btn btn-danger">Delete Profile</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

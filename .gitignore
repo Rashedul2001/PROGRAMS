@@ -1,9 +1,9 @@
-.tmp.driveupload/
-.tmp.drivedownload/
-CONTEST_CodeForces_Folder/zzExecutable.exe
-C++/3rdSemesterLabReportPrograms/zzExecutable.exe
-C++/test/File/zzExecutable.exe
-PYTHON/Test Cases/TestFilePY.py
+**/.tmp.driveupload/
+**/.tmp.drivedownload/
+**/CONTEST_CodeForces_Folder/zzExecutable.exe
+**/C++/3rdSemesterLabReportPrograms/zzExecutable.exe
+**/C++/test/File/zzExecutable.exe
+**/PYTHON/Test Cases/TestFilePY.py
 C++/test/TestFileCPP2.cpp
 C++/test/testFileCPP.cpp
 C++/test/zzExecutable.exe
@@ -13,7 +13,7 @@ JAVA/Test/TestFileJava.java
 JAVA/Test/testFileJava2.java
 DSA_CPA/Guaranteed Placement Course_C++/zzExecutable.exe
 CONTEST_CodeForces_Folder/a.exe
-.cph/
+**/.cph/
 DSA_CPA/Greedy_Algorithms/zzExecutable.exe
 CONTEST_CodeForces_Folder/Error.txt
 DSA_CPA/DynamicProgramming/zzExecutable.exe
@@ -30,6 +30,13 @@ CONTEST_CodeForces_Folder/codeJava.java
 CONTEST_CodeForces_Folder/codePy.py
 VIMFolder/a.exe
 VisualStudio/RunInConsolCPP
+
+**zzExecutable.exe
+**a.exe
+**in.in
+**out.out
+**Error.txt
+**tempCodeCPP.cpp
 
 ### IntelliJ IDEA ###
 out/
@@ -56,7 +63,7 @@ bin/
 /.nb-gradle/
 
 ### VS Code ###
-# .vscode/
+**/.vscode/
 
 ### Mac OS ###
 .DS_Store
@@ -72,3 +79,15 @@ CONTEST_CodeForces_Folder/codeKt.jar
 C/TEST Cases/Test/TestFileC.c
 KOTLIN/test/testFileKotlin.jar
 KOTLIN/test/testFileKotlin.kt
+
+.cph/
+.github/
+.vscode/
+build/
+
+### ASP .NET ###
+**/.vs/
+**/bin/
+**/obj/
+**/Migrations/
+**Todo.txt

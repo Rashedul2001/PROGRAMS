@@ -1,0 +1,66 @@
+﻿@model HotelBookingSystem.Models.Domain.BookingModel
+
+@{
+	ViewData["Title"] = "Booking Details";
+}
+
+<h1>Booking Details</h1>
+
+<div class="card">
+	<div class="card-header">
+		<h4>Reservation Information</h4>
+	</div>
+	<div class="card-body">
+		<dl class="row">
+			<dt class="col-sm-4">Booking ID</dt>
+			<dd class="col-sm-8">@Model.BookingId</dd>
+
+			<dt class="col-sm-4">Guest</dt>
+			<dd class="col-sm-8">
+				<a asp-controller="User" asp-action="Details" asp-route-id="@Model.UserId">
+					@Model.User.UserName
+				</a>
+			</dd>
+
+			<dt class="col-sm-4">Check-In Date</dt>
+			<dd class="col-sm-8">@Model.CheckInDateTime.ToShortDateString()</dd>
+
+			<dt class="col-sm-4">Check-Out Date</dt>
+			<dd class="col-sm-8">@Model.CheckOutDateTime.ToShortDateString()</dd>
+
+			<dt class="col-sm-4">Number of Nights</dt>
+			<dd class="col-sm-8">@((Model.CheckOutDateTime - Model.CheckInDateTime).Days)</dd>
+
+			<dt class="col-sm-4">Number of Guests</dt>
+			<dd class="col-sm-8">@Model.TotalPerson</dd>
+
+			<dt class="col-sm-4">Total Price</dt>
+			<dd class="col-sm-8">@Model.TotalPrice.ToString("C")</dd>
+
+			<dt class="col-sm-4">Booking Status</dt>
+			<dd class="col-sm-8">
+				<span class="badge @(Model.BookingStatus == "Confirmed" ? "bg-success" :
+                                   Model.BookingStatus == "Pending" ? "bg-warning" :
+                                   Model.BookingStatus == "Cancelled" ? "bg-danger" : "bg-info")">
+					@Model.BookingStatus
+				</span>
+			</dd>
+
+			<dt class="col-sm-4">Booking Date</dt>
+			<dd class="col-sm-8">@Model.BookingDate</dd>
+
+			@if (!string.IsNullOrEmpty(Model.SpecialRequests))
+			{
+				<dt class="col-sm-4">Special Requests</dt>
+				<dd class="col-sm-8">@Model.SpecialRequests</dd>
+			}
+		</dl>
+	</div>
+</div>
+
+<div class="mt-4">
+	<a asp-action="Edit" asp-route-id="@Model.BookingId" class="btn btn-warning">Edit</a>
+	<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+	<a asp-controller="User" asp-action="Bookings" asp-route-id="@Model.UserId" class="btn btn-primary">View All User Bookings</a>
+</div>
+

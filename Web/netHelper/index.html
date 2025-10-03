@@ -1,67 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
+@model IEnumerable<HotelBooking.Models.User>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Layout</title>
-    <!-- Include Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body>
-    <div class="container my-4">
-        <div class="row align-items-center">
-            <div class="col-md-3">
-                <!-- First Dropdown -->
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown 1
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <!-- Second Dropdown -->
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown 2
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 ml-auto d-flex justify-content-end">
-                <!-- Third Dropdown -->
-                <div class="dropdown mr-2">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu3"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown 3
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                    </div>
-                </div>
-                <!-- Text -->
-                <div class="text-right">
-                    <span>Your Text Here</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Include jQuery and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+    @{
+        ViewData["Title"] = "Users";
+    }
+    
+    <h1>Users</h1>
+    
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedAt)
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.UserId" class="btn btn-sm btn-warning">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.UserId" class="btn btn-sm btn-info">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.UserId" class="btn btn-sm btn-danger">Delete</a> |
+                    <a asp-action="Bookings" asp-route-id="@item.UserId" class="btn btn-sm btn-primary">Bookings</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+    
+    

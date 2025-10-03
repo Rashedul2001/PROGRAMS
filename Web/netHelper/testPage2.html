@@ -1,0 +1,129 @@
+@model HotelBooking.Models.Booking
+
+@{
+    ViewData["Title"] = "Booking Details";
+}
+
+<h1>Booking Details</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Reservation Information</h4>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-4">Booking ID</dt>
+                    <dd class="col-sm-8">@Model.BookingId</dd>
+                    
+                    <dt class="col-sm-4">Guest</dt>
+                    <dd class="col-sm-8">
+                        <a asp-controller="User" asp-action="Details" asp-route-id="@Model.UserId">
+                            @Model.User.FirstName @Model.User.LastName
+                        </a>
+                    </dd>
+                    
+                    <dt class="col-sm-4">Hotel</dt>
+                    <dd class="col-sm-8">
+                        <a asp-controller="Hotel" asp-action="Details" asp-route-id="@Model.Room.HotelId">
+                            @Model.Room.Hotel.Name
+                        </a>
+                    </dd>
+                    
+                    <dt class="col-sm-4">Room</dt>
+                    <dd class="col-sm-8">@Model.Room.RoomNumber (@Model.Room.RoomType)</dd>
+                    
+                    <dt class="col-sm-4">Check-In Date</dt>
+                    <dd class="col-sm-8">@Model.CheckInDate.ToShortDateString()</dd>
+                    
+                    <dt class="col-sm-4">Check-Out Date</dt>
+                    <dd class="col-sm-8">@Model.CheckOutDate.ToShortDateString()</dd>
+                    
+                    <dt class="col-sm-4">Number of Nights</dt>
+                    <dd class="col-sm-8">@((Model.CheckOutDate - Model.CheckInDate).Days)</dd>
+                    
+                    <dt class="col-sm-4">Number of Guests</dt>
+                    <dd class="col-sm-8">@Model.NumberOfGuests</dd>
+                    
+                    <dt class="col-sm-4">Total Price</dt>
+                    <dd class="col-sm-8">@Model.TotalPrice.ToString("C")</dd>
+                    
+                    <dt class="col-sm-4">Booking Status</dt>
+                    <dd class="col-sm-8">
+                        <span class="badge @(Model.BookingStatus == "Confirmed" ? "bg-success" : 
+                                           Model.BookingStatus == "Pending" ? "bg-warning" : 
+                                           Model.BookingStatus == "Cancelled" ? "bg-danger" : "bg-info")">
+                            @Model.BookingStatus
+                        </span>
+                    </dd>
+                    
+                    <dt class="col-sm-4">Booking Date</dt>
+                    <dd class="col-sm-8">@Model.BookingDate</dd>
+                    
+                    @if (!string.IsNullOrEmpty(Model.SpecialRequests))
+                    {
+                        <dt class="col-sm-4">Special Requests</dt>
+                        <dd class="col-sm-8">@Model.SpecialRequests</dd>
+                    }
+                </dl>
+            </div>
+        </div>
+        
+        @if (Model.Payments != null && Model.Payments.Any())
+        {
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4>Payment Information</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Payment ID</th>
+                                <th>Amount</th>
+                                <th>Method</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var payment in Model.Payments)
+                            {
+                                <tr>
+                                    <td>@payment.PaymentId</td>
+                                    <td>@payment.Amount.ToString("C")</td>
+                                    <td>@payment.PaymentMethod</td>
+                                    <td>
+                                        <span class="badge @(payment.PaymentStatus == "Completed" ? "bg-success" : 
+                                                           payment.PaymentStatus == "Pending" ? "bg-warning" : 
+                                                           payment.PaymentStatus == "Failed" ? "bg-danger" : "bg-info")">
+                                            @payment.PaymentStatus
+                                        </span>
+                                    </td>
+                                    <td>@payment.PaymentDate</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>Actions</h4>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <a asp-action="Edit" asp-route-id="@Model.BookingId" class="btn btn-warning">Edit Booking</a>
+                    <a asp-controller="Payment" asp-action="Create" asp-route-bookingId="@Model.BookingId" class="btn btn-success">Add Payment</a>
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,163 @@
+﻿@* @model IEnumerable<HotelBookingSystem.Models.ViewModel.IdentityUserListView> *@
+
+<!-- Loader Overlay -->
+<div id="loaderOverlay" style="display:none;">
+	<div class="loader"></div>
+</div>
+
+<style>
+	/* Loader Overlay Background */
+	#loaderOverlay {
+		position: fixed;
+		z-index: 9999;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(255, 255, 255, 0.8);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	/* Stylish Loader Animation */
+	.loader {
+		border: 6px solid #f3f3f3; /* Light grey */
+		border-top: 6px solid #007bff; /* Bootstrap Primary */
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		animation: spin 1s linear infinite;
+		box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	}
+
+	@@keyframes spin {
+		0%
+
+	{
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+
+	}</style>
+
+
+@{
+	ViewData["Title"] = "List";
+	int currentPage = ViewBag.currentPage ?? 1;
+	int totalPages = ViewBag.totalPages ?? 1;
+	string pageSize = ViewBag.pageSize ?? "3";
+	string search = ViewBag.search ?? string.Empty;
+	string sort = ViewBag.sort ?? string.Empty;
+
+	int start = 1, end = totalPages;
+	if (totalPages >= 5)
+	{
+		start = (currentPage >= 3 ? currentPage - 2 : currentPage);
+		end = (currentPage <= totalPages - 2 ? currentPage + 2 : totalPages);
+	}
+}
+
+@await Html.PartialAsync("Partials/UserCreationModal")
+
+<div class="container">
+	<div class="row mb-3">
+		<div class="col-md-4">
+			<form method="get" asp-controller="UserManagement" asp-action="List" class="d-flex align-items-center mb-3">
+				<input type="text" name="search" class="form-control me-2" placeholder="search users..." value="@ViewBag.search" />
+				<button type="submit" class="btn btn-outline-primary">search</button>
+				<select name="pageSize" class="form-select" style="width:auto;" onchange="this.form.submit()">
+					<option value="2" selected="@(pageSize == "2" ? "selected" : null)">2</option>
+					<option value="5" selected="@(pageSize == "5" ? "selected" : null)">5</option>
+					<option value="10" selected="@(pageSize == "10" ? "selected" : null)">10</option>
+					<option value="20" selected="@(pageSize == "20" ? "selected" : null)">20</option>
+					<option value="All" selected="@(pageSize == "All" ? "selected" : null)">All</option>
+				</select>
+				<input type="hidden" name="sort" value="@ViewBag.Sort" />
+				<input type="hidden" name="page" value="1" />
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- User List Table -->
+<div class="container">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					Id
+					<a asp-controller="UserManagement" asp-action="List" asp-route-sort="ID Desc" asp-route-search="@search" asp-route-currentPage="@currentPage" asp-route-pageSize="@pageSize"> <i class="fa-solid fa-arrow-up"></i></a>
+					<a asp-controller="UserManagement" asp-action="List" asp-route-sort="ID" asp-route-search="@search" asp-route-currentPage="@currentPage" asp-route-pageSize="@pageSize"> <i class="fa-solid fa-arrow-down"></i></a>
+				</th>
+				<th>
+					User Name
+					<a asp-controller="UserManagement" asp-action="List" asp-route-sort="User Name Desc" asp-route-search="@search" asp-route-currentPage="@currentPage" asp-route-pageSize="@pageSize"> <i class="fa-solid fa-arrow-up"></i></a>
+					<a asp-controller="UserManagement" asp-action="List" asp-route-sort="User Name" asp-route-search="@search" asp-route-currentPage="@currentPage" asp-route-pageSize="@pageSize"> <i class="fa-solid fa-arrow-down"></i></a>
+				</th>
+				<th>
+					Email
+					<a asp-controller="UserManagement" asp-action="List" asp-route-sort="Email Desc" asp-route-search="@search" asp-route-currentPage="@currentPage" asp-route-pageSize="@pageSize"> <i class="fa-solid fa-arrow-up"></i></a>
+					<a asp-controller="UserManagement" asp-action="List" asp-route-sort="Email" asp-route-search="@search" asp-route-currentPage="@currentPage" asp-route-pageSize="@pageSize"> <i class="fa-solid fa-arrow-down"></i></a>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			@* @foreach (var user in Model)
+			{
+				<tr>
+					<td>@user.UserId</td>
+					<td>@user.UserName</td>
+					<td>@user.Email</td>
+				</tr>
+			} *@
+		</tbody>
+	</table>
+</div>
+@if (totalPages > 1)
+{
+	<nav aria-label="Page navigation example">
+		<ul class="pagination">
+			<li class="page-item @(currentPage == 1 ? "disabled" : "")">
+				<a class="page-link"
+				   asp-controller="UserManagement"
+				   asp-action="List"
+				   asp-route-currentPage="@(currentPage - 1)"
+				   asp-route-search="@search"
+				   asp-route-sort="@sort"
+				   asp-route-pageSize="@pageSize"
+				   aria-label="Previous">
+					&laquo; Previous
+				</a>
+			</li>
+			@for (int i = start; i <= end; i++)
+			{
+				var isActive = (i == currentPage) ? "active" : "";
+				<li class="page-item @isActive">
+					<a class="page-link"
+					   asp-controller="UserManagement"
+					   asp-action="List"
+					   asp-route-currentPage="@i"
+					   asp-route-search="@search"
+					   asp-route-sort="@sort"
+					   asp-route-pageSize="@pageSize">@i</a>
+				</li>
+			}
+			<li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+				<a class="page-link"
+				   asp-controller="UserManagement"
+				   asp-action="List"
+				   asp-route-currentPage="@(currentPage + 1)"
+				   asp-route-search="@search"
+				   asp-route-sort="@sort"
+				   asp-route-pageSize="@pageSize"
+				   aria-label="Next">
+					Next &raquo;
+				</a>
+			</li>
+		</ul>
+	</nav>
+}

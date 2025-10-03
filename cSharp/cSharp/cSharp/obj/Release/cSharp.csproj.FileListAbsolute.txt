@@ -1,7 +1,0 @@
-D:\PROGRAMS\cSharp\cSharp\cSharp\bin\Release\cSharp.exe.config
-D:\PROGRAMS\cSharp\cSharp\cSharp\bin\Release\cSharp.exe
-D:\PROGRAMS\cSharp\cSharp\cSharp\bin\Release\cSharp.pdb
-D:\PROGRAMS\cSharp\cSharp\cSharp\obj\Release\cSharp.csproj.AssemblyReference.cache
-D:\PROGRAMS\cSharp\cSharp\cSharp\obj\Release\cSharp.csproj.CoreCompileInputs.cache
-D:\PROGRAMS\cSharp\cSharp\cSharp\obj\Release\cSharp.exe
-D:\PROGRAMS\cSharp\cSharp\cSharp\obj\Release\cSharp.pdb

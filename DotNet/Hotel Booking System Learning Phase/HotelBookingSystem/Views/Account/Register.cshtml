@@ -1,0 +1,39 @@
+﻿@model HotelBookingSystem.Models.ViewModel.RegisterViewModel
+@{
+    ViewData["Title"] = "User Registration";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-center text-white">
+                    <h4>User Registration</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Register" method="post">
+                        <div class="form-group mb-3">
+                            <label asp-for="UserName" class="form-label">Username</label>
+                            <input asp-for="UserName" class="form-control" placeholder="Enter your username" required />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label asp-for="Email" class="form-label">Email</label>
+                            <input asp-for="Email" type="email" class="form-control" placeholder="Enter your email" required />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label asp-for="Password" class="form-label">Password</label>
+                            <input asp-for="Password" type="password" class="form-control" placeholder="Enter your password" required />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label asp-for="ConfirmPassword" class="form-label">Confirm Password</label>
+                            <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Confirm your password" required />
+                        </div>
+                        <input asp-for="Role" type="hidden" id="Role" name="Role" value="User" />
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

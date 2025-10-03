@@ -1,0 +1,82 @@
+﻿@model HotelBookingSystem.Models.Domain.UserModel
+
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<h1>User Details</h1>
+
+<div>
+    <h4>User Information</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserEmail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserEmail)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserPhone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserPhone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+    </dl>
+</div>
+
+<div class="mt-4">
+    <h4>Bookings</h4>
+    @if (Model.Bookings != null && Model.Bookings.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Check-In</th>
+                    <th>Check-Out</th>
+                    <th>Status</th>
+                    <th>Total Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var booking in Model.Bookings)
+                {
+                    <tr>
+                        <td>@booking.BookingId</td>
+                        <td>@booking.CheckInDateTime.ToShortDateString()</td>
+                        <td>@booking.CheckOutDateTime.ToShortDateString()</td>
+                        <td>@booking.BookingStatus</td>
+                        <td>@booking.TotalPrice.ToString("C")</td>
+                        <td>
+                            <a asp-controller="Booking" asp-action="Details" asp-route-id="@booking.BookingId" class="btn btn-sm btn-info">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No bookings found for this user.</p>
+    }
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.UserId" class="btn btn-warning">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+

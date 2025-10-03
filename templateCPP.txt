@@ -26,13 +26,6 @@ using namespace __gnu_pbds;
 #define prec(n) fixed<<setprecision(n)
 #define rep(a,b) for(auto &a : b)
 #define rep1(n) for(ll i=0; i<(ll)(n); ++i)
-#define rep2(i,n) for(ll i=0; i<(ll)(n); ++i)
-#define rep3(i,a,b) for(ll i=(ll)(a); i<(ll)(b); ++i)
-#define rep4(i,a,b,c) for(ll i=(ll)(a); i<(ll)(b); i+=(c))
-#define per1(n) for(ll i=((ll)n)-1; i>=0; --i)
-#define per2(i,n) for(ll i=((ll)n)-1; i>=0; --i)
-#define per3(i,a,b) for(ll i=((ll)a)-1; i>=(ll)(b); --i)
-#define per4(i,a,b,c) for(ll i=((ll)a)-1; i>=(ll)(b); i-=(c))
 #define case(i) cout << "Case " << i << ": "
 
 const int MOD1 = 998244353;
@@ -101,9 +94,9 @@ void solve(int testCase)
 int main()
 {
 #ifdef RASHEDUL
-    freopen("D://PROGRAMS//CONTEST_CodeForces_Folder//Error.txt", "w", stderr);
-    freopen("D://PROGRAMS//CONTEST_CodeForces_Folder//in.in", "r", stdin);
-    freopen("D:/PROGRAMS/CONTEST_CodeForces_Folder/out.out", "w", stdout);
+    freopen("D:\\SolvedProblems\\Error.txt", "w", stderr);
+    freopen("D:\\SolvedProblems\\in.txt", "r", stdin);
+    freopen("D:\\SolvedProblems\\out.txt", "w", stdout);
     auto start1 = high_resolution_clock::now();
 #endif
     fastio();

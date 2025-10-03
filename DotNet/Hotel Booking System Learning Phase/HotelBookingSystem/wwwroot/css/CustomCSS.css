@@ -1,0 +1,64 @@
+﻿.customAnim {
+    height: 150px;
+    width: 220px;
+    position: relative;
+    background: red;
+    text-transform: uppercase;
+    animation: office 20s 4;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.nameR {
+    color: black;
+    font: italic 2.5em sans-serif;
+    letter-spacing: -5px;
+    font-weight: 800;
+    margin: 0 20px;
+    padding-top: 30px;
+}
+
+
+@keyframes office {
+    0% {
+        background-color: red;
+        left: 400px;
+        top: 0px;
+    }
+
+    25% {
+        background-color: orange;
+        left: 1150px;
+        top: 100px;
+    }
+
+    50% {
+        background-color: yellow;
+        right: 1150px;
+        top: 300px;
+    }
+
+    75% {
+        background-color: green;
+        left: 0px;
+        top: 407px;
+    }
+
+    100% {
+        background-color: blue;
+        left: 400px;
+        top: 0px;
+    }
+}
+
+.navbar-custom {
+    background-color: #004080;
+}
+
+    .navbar-custom .navbar-brand, .navbar-custom .nav-link {
+        color: #ffffff;
+    }
+
+        .navbar-custom .nav-link:hover {
+            color: #ffcc00;
+        }
